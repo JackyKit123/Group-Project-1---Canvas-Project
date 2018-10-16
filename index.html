@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+    <!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/stylesheets/main.css">
+    </head>
+
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="canvas-container">
+            <canvas width=1000 height=1000 class="canvas" id="canvas-real">Your browser does not support
+                Canvas</canvas>
+            <canvas width=1000 height=1000 class="canvas" id="canvas-draft">Your browser does not support
+                Canvas</canvas>
+        </div>
+        <div class="buttons">
+            <button><span id="drawing-rectangle">Drawing Rectangle</span></button>
+            <button><span id="drawing-line">Drawing Line</span></button>
+            <button><span id="pencil">Pencil</span></button>
+            <button><span id="clear-canvas">Erase All</span></button>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/jcanvas.js"></script>
+        <script type='text/javascript' src="assets/script/canvas-common.js"></script>
+        <script type='text/javascript' src="assets/script/tool_pencil.js"></script>
+        <script type='text/javascript' src="assets/script/tool_rectangle.js"></script>
+        <script type='text/javascript' src="assets/script/tool_straight.js"></script>
+        <script type='text/javascript'>
+
+            currentFunction = new Pencil();
+
+            $('#drawing-rectangle').on('click', () => {
+                currentFunction = new DrawingRectangle(contextReal, contextDraft);
+            });
+            $('#drawing-line').on('click', () => {
+                currentFunction = new DrawingLine();
+            });
+            $('#pencil').on('click', () => {
+                currentFunction = new Pencil();
+            });
+            $('#clear-canvas').on('click', () => {
+                $('.canvas').clearCanvas()
+        });  
+        </script>
+    </body>
+
+</html>
