@@ -10,14 +10,14 @@ $('#canvas-draft')
     .mouseenter(function (e) {
         currentFunction.onMouseEnter([e.offsetX, e.offsetY], e);
     });
-    $('html')
+$('html')
     .mouseup(function (e) {
         currentFunction.onMouseUp([e.offsetX, e.offsetY], e);
     })
     .mousemove(function (e) {
         currentFunction.onMouseMove([e.offsetX, e.offsetY], e);
     })
-    
+
 class PaintFunction {
     constructor() {
         this.strokeStyle = 'black';
@@ -27,11 +27,11 @@ class PaintFunction {
         this.strokeArrow = false;
         this.dragging = false;
     }
-    onMouseDown(){}
-    onMouseMove(){}
-    onMouseUp(){}
-    onMouseLeave(){}
-    onMouseEnter(){}
+    onMouseDown() { }
+    onMouseMove() { }
+    onMouseUp() { }
+    onMouseLeave() { }
+    onMouseEnter() { }
 
     changeStrokeStyle(style) {
         this.strokeStyle = style;
