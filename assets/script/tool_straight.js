@@ -1,29 +1,13 @@
-class DrawingLine extends PaintFunction {
-    constructor(strokeDash, strokeArrow) {
+class DrawingStraightLine extends PaintFunction {
+    constructor() {
         super();
-        this.dragging = false;
-        this.strokeWidth = 10;
-        if (strokeDash == 'undefined' || false) {
-            this.strokeDash = 0;
-        } else {
-            this.strokeDash = this.strokeWidth * 10;
-        }
-        if (strokeArrow == 'undefined' || false) {
-            this.strokeArrow = false;
-        } else {
-            this.strokeArrow = true;
-        }
     }
 
     onMouseDown(coord, event) {
-        if (this.dragging) {
-            this.draw(this.mouseBeginX, this.mouseBeginY, this.mouseEndX, this.mouseEndY, '#canvas-real');
-            this.dragging = false;
-        } else {
             this.dragging = true;
             this.mouseBeginX = coord[0];
             this.mouseBeginY = coord[1];
-        }
+            console.log(this.mouseBeginX,this.mouseBeginY)
     }
 
     onMouseMove(coord, event) {
@@ -31,6 +15,7 @@ class DrawingLine extends PaintFunction {
             $('#canvas-draft').clearCanvas()
             this.mouseEndX = coord[0];
             this.mouseEndY = coord[1];
+            console.log(this.mouseBeginX, this.mouseBeginY, this.mouseEndX, this.mouseEndY)
             this.draw(this.mouseBeginX, this.mouseBeginY, this.mouseEndX, this.mouseEndY, '#canvas-draft');
         }
     }
@@ -39,20 +24,13 @@ class DrawingLine extends PaintFunction {
         if (this.dragging) {
             this.mouseEndX = coord[0];
             this.mouseEndY = coord[1];
+            console.log(this.mouseBeginX, this.mouseBeginY, this.mouseEndX, this.mouseEndY)
             this.draw(this.mouseBeginX, this.mouseBeginY, this.mouseEndX, this.mouseEndY, '#canvas-real');
             this.dragging = false;
             $('#canvas-draft').clearCanvas()
         }
     }
-    onMouseEnter(coord, event) {
-        // Nothing
-    }
-    onMouseLeave(coord, event) {
-        if (this.dragging) {
-            this.mouseEndX = coord[0];
-            this.mouseEndY = coord[1];
-        }
-    }
+
 
     draw(x1, y1, x2, y2, which) {
         $(which).drawLine({
@@ -67,5 +45,3 @@ class DrawingLine extends PaintFunction {
         })
     }
 }
-
-

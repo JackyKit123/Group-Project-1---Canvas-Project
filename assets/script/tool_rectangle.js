@@ -1,26 +1,46 @@
-class DrawingRectangle extends PaintFunction{
-    constructor(contextReal,contextDraft){
+class DrawingRectangle extends PaintFunction {
+    constructor() {
         super();
-        this.contextReal = contextReal;
-        this.contextDraft = contextDraft;            
-    }
-    
-    onMouseDown(coord,event){
-        this.contextReal.fillStyle = "#f44";
-        this.origX = coord[0];
-        this.origY = coord[1];
-    }
-    onDragging(coord,event){
-        this.contextDraft.fillStyle = "#f44";
-        this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-        this.contextDraft.fillRect(this.origX,this.origY,coord[0]- this.origX,coord[1] - this.origY)
     }
 
-    onMouseMove(){}
-    onMouseUp(coord){
-        this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-        this.contextReal.fillRect(this.origX,this.origY,coord[0]- this.origX,coord[1] - this.origY)
+    onMouseDown(coord, event) {
+            this.dragging = true;
+            this.mouseBeginX = coord[0];
+            this.mouseBeginY = coord[1];
     }
-    onMouseLeave(){}
-    onMouseEnter(){}
+
+    onMouseMove(coord, event) {
+        if (this.dragging) {
+            $('#canvas-draft').clearCanvas()
+            this.mouseEndX = coord[0];
+            this.mouseEndY = coord[1];
+            this.draw(this.mouseBeginX, this.mouseBeginY, this.mouseEndX, this.mouseEndY, '#canvas-draft');
+        }
+    }
+
+    onMouseUp(coord, event) {
+        if (this.dragging) {
+            this.mouseEndX = coord[0];
+            this.mouseEndY = coord[1];
+            this.draw(this.mouseBeginX, this.mouseBeginY, this.mouseEndX, this.mouseEndY, '#canvas-real');
+            this.dragging = false;
+            $('#canvas-draft').clearCanvas()
+        }
+    }
+
+    draw(x1, y1, x2, y2, which) {
+        const h = Math.abs(y1-y2);
+        const w = Math.abs(x1-x2);
+        const x = Math.min(x1,x2);
+        const y = Math.min(y1,y2);
+        $(which).drawRect({
+            fillStyle: this.fillStyle,
+            strokeStyle: this.strokeStyle,
+            strokeWidth: this.strokeWidth,
+            x: x, y: y,
+            height: h,
+            width: w,
+            fromCenter: false
+        })
+    }
 }

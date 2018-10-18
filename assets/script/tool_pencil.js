@@ -1,7 +1,6 @@
 class Pencil extends PaintFunction {
     constructor() {
         super();
-        this.dragging = false;
     }
 
     onMouseDown(coord, event) {
@@ -19,19 +18,17 @@ class Pencil extends PaintFunction {
             this.mouseBeginY = this.mouseEndY;
         }
     }
+    
     onMouseUp(coord, event) {
         this.dragging = false;
     }
+
     onMouseLeave(coord, event) {
         this.dragging = false;
     }
 
-    onMouseEnter(coord, event){
-
-    }
-
     draw(x1, y1, x2, y2) {
-        $('canvas').drawLine({
+        $('#canvas-real').drawLine({
             strokeWidth: this.strWidth,
             strokeStyle: this.strokeStyle,
             x1: x1, y1: y1,
