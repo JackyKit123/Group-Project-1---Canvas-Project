@@ -47,7 +47,7 @@
                 </button>
 
                 <button>
-                    <i class="far fa-circle"></i>
+                    <i id="drawing-circle" class="far fa-circle"></i>
                 </button>
 
                 <button>
@@ -102,27 +102,11 @@
     <script type='text/javascript' src="assets/script/canvas-common.js"></script>
     <script type='text/javascript' src="assets/script/tool_pencil.js"></script>
     <script type='text/javascript' src="assets/script/tool_rectangle.js"></script>
+    <script type='text/javascript' src="assets/script/tool_circle.js"></script>
     <script type='text/javascript' src="assets/script/tool_straight.js"></script>
+    <script type='text/javascript' src="assets/script/all_tools.js"></script>
     <!-- <script type='text/javascript' src="assets/script/undo_redo.js"></script> -->
-    <script type='text/javascript'>
 
-        currentFunction = new Pencil();
-
-        $('#drawing-rectangle').on('click', () => {
-            currentFunction = new DrawingRectangle();
-        });
-        $('#drawing-line').on('click', () => {
-            currentFunction = new DrawingStraightLine();
-        });
-        $('#pencil').on('click', () => {
-            currentFunction = new Pencil();
-        });
-
-        $('#clear-canvas').on('click', () => {
-            $('.canvas').clearCanvas();
-            /* $('.canvas').removeLayers(); */
-        }); 
-    </script>
 </body>
 
 </html>
