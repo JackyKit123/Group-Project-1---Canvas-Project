@@ -4,10 +4,9 @@ class DrawingStraightLine extends PaintFunction {
     }
 
     onMouseDown(coord, event) {
-            this.dragging = true;
-            this.mouseBeginX = coord[0];
-            this.mouseBeginY = coord[1];
-            console.log(this.mouseBeginX,this.mouseBeginY)
+        this.dragging = true;
+        this.mouseBeginX = coord[0];
+        this.mouseBeginY = coord[1];
     }
 
     onMouseMove(coord, event) {
@@ -15,7 +14,6 @@ class DrawingStraightLine extends PaintFunction {
             $('#canvas-draft').clearCanvas()
             this.mouseEndX = coord[0];
             this.mouseEndY = coord[1];
-            console.log(this.mouseBeginX, this.mouseBeginY, this.mouseEndX, this.mouseEndY)
             this.draw(this.mouseBeginX, this.mouseBeginY, this.mouseEndX, this.mouseEndY, '#canvas-draft');
         }
     }
@@ -24,16 +22,21 @@ class DrawingStraightLine extends PaintFunction {
         if (this.dragging) {
             this.mouseEndX = coord[0];
             this.mouseEndY = coord[1];
-            console.log(this.mouseBeginX, this.mouseBeginY, this.mouseEndX, this.mouseEndY)
+            resetUndo();
             this.draw(this.mouseBeginX, this.mouseBeginY, this.mouseEndX, this.mouseEndY, '#canvas-real');
             this.dragging = false;
             $('#canvas-draft').clearCanvas()
         }
     }
 
-
     draw(x1, y1, x2, y2, which) {
+        if (which == '#canvas-draft') {
+            var printLayer = false;
+        } else {
+            var printLayer = true;
+        }
         $(which).drawLine({
+            layer: printLayer,
             strokeWidth: this.strokeWidth,
             strokeDash: [this.strokeDash],
             strokeStyle: this.strokeStyle,
