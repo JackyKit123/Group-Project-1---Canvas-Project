@@ -48,5 +48,4 @@ class PaintFunction {
     changeStrokeArrow(boolean) {
         this.strokeArrow = boolean;
     }
-
-}
+}    
