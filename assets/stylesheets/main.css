@@ -30,6 +30,10 @@ body{
     width: 60px;
 }
 
+/* #btn-trigger {
+    display: none;
+} */
+
 /*---Toolbar---*/
 .wrapper {
     position: relative;
