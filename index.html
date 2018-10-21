@@ -4,57 +4,141 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-    <!--<![endif]-->
+<!--<![endif]-->
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/stylesheets/main.css">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/stylesheets/main.css">
+    <link rel="stylesheet" href="assets/stylesheets/reset.css">
+    <link rel="stylesheet" href="assets/stylesheets/color_picker.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
 
-    <body>
-        <!--[if lt IE 7]>
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div id="canvas-container">
-            <canvas width=1000 height=1000 class="canvas" id="canvas-real">Your browser does not support
+    <nav class="navbar navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="assets/img/html5-icon.png">
+        </a>
+
+        <button class='btn btn-secondary btn-lg color-picker' id='btn-trigger' data-toggle="modal" data-target="#color-modal">
+            <div class='modal' id='color-modal'>
+                <div class='color_picker_container'>
+                    <div class='picker_field' style="background-color:red">
+                        <div id='selector'></div>
+                    </div>
+                    <div class='hue_picker_container'>
+                        <div class="hue_slider_container"><input type="range" min="0" max="360" value="360" class="color-slider hue_picker hue_picker_slider"></div>
+                        <div class="color_number_container"><input type="number" min="0" max="360" value="360" class="color-number hue_picker hue_picker_number"></div>
+                    </div>
+                    <div class='alpha_picker_container'>
+                        <div class="alpha_slider_container">
+                            <div id='grey_gradient'>
+                                <div>
+                                    <input type="range" min="0" max="100" value="100" class="color-slider alpha_picker alpha_picker_slider">
+                                </div>
+                            </div>
+                            <div id='alpha_background'></div>
+                        </div>
+                        <div class="color_number_container"><input type="number" min="0" max="100" value="100" class="color-number alpha_picker alpha_picker_number"></div>
+                    </div>
+                    <div class='color_preview_container'>
+                        <div class='color_preview'></div>
+                    </div>
+                </div>
+            </div>
+        </button>
+    </nav>
+
+    <section id="canvas-mainboard">
+        <div id="canvas-draw" class="container-fluid">
+            <canvas width=1200 height=800 class="canvas" id="canvas-real">Your browser does not support
                 Canvas</canvas>
-            <canvas width=1000 height=1000 class="canvas" id="canvas-draft">Your browser does not support
+            <canvas width=1200 height=800 class="canvas" id="canvas-draft">Your browser does not support
                 Canvas</canvas>
         </div>
-        <div class="buttons">
-            <button><span id="drawing-rectangle">Drawing Rectangle</span></button>
-            <button><span id="drawing-line">Drawing Line</span></button>
-            <button><span id="pencil">Pencil</span></button>
-            <button><span id="clear-canvas">Erase All</span></button>
+    </section>
+
+    <section id="toolbar">
+        <div class="wrapper">
+            <nav id="sidebar">
+                <button id="drawing-rectangle">
+                    <img src="assets/img/rectangle.png" id="rect-img">
+                </button>
+
+                <button>
+                    <i id="drawing-circle" class="far fa-circle"></i>
+                </button>
+
+                <button>
+                    <i class="fas fa-draw-polygon"></i>
+                </button>
+
+                <button>
+                    <i id="drawing-line" class="fas fa-slash"></i>
+                </button>
+
+                <button>
+                    <i id="pencil" class="fas fa-pencil-alt"></i>
+                </button>
+
+                <button>
+                    <i class="fas fa-font"></i>
+                </button>
+
+                <!-- 
+                <button><span id="drawing-line">Drawing Line</span></button>
+                <button><span id="pencil">Pencil</span></button>
+                <button><span id="clear-canvas">Erase All</span></button>
+                </div>
+
+            <div class="undo-redo">
+                <button><span id="undo">Undo</span></button>
+                <button><span id="redo">Redo</span></button>
+            </div> -->
+
+            </nav>
+
+            <nav id="sidebar-2">
+                <button><span id="clear-canvas">Erase All</span></button>
+
+                <button>
+                    <i class="fas fa-undo"></i>
+                </button>
+
+                <button>
+                    <i class="fas fa-redo"></i>
+                </button>
+            </nav>
         </div>
-        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/jcanvas.js"></script>
-        <script type='text/javascript' src="assets/script/canvas-common.js"></script>
-        <script type='text/javascript' src="assets/script/tool_pencil.js"></script>
-        <script type='text/javascript' src="assets/script/tool_rectangle.js"></script>
-        <script type='text/javascript' src="assets/script/tool_straight.js"></script>
-        <script type='text/javascript'>
+    </section>
 
-            currentFunction = new Pencil();
+    <!--Dependacies-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/jcanvas.js"></script>
+    
+    <!--Functions-->
+    <script type='text/javascript' src="assets/script/canvas-common.js"></script>
+    <script type='text/javascript' src="assets/script/tool_pencil.js"></script>
+    <script type='text/javascript' src="assets/script/tool_rectangle.js"></script>
+    <script type='text/javascript' src="assets/script/tool_circle.js"></script>
+    <script type='text/javascript' src="assets/script/tool_straight.js"></script>
+    <script type='text/javascript' src="assets/script/all_tools.js"></script>
+    <script type='text/javascript' src="assets/script/undo_redo.js"></script>
+    <script type='text/javascript' src="assets/script/color_picker.js"></script>
 
-            $('#drawing-rectangle').on('click', () => {
-                currentFunction = new DrawingRectangle();
-            });
-            $('#drawing-line').on('click', () => {
-                currentFunction = new DrawingStraightLine();
-            });
-            $('#pencil').on('click', () => {
-                currentFunction = new Pencil();
-            });
-            $('#clear-canvas').on('click', () => {
-                $('.canvas').clearCanvas()
-            }); 
-        </script>
-    </body>
+</body>
 
 </html>

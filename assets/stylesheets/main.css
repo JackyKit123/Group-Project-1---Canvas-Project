@@ -1,19 +1,81 @@
-.canvas{
+body{
+    overflow:hidden;
+    user-select: none;
+}
+
+#canvas-mainboard {
+    position: relative;
+}
+
+#canvas-draft, 
+#canvas-real {
     border:1px black dotted;
-    position:absolute;
-    top:0px;
-    bottom:0px;
-    left:0px;
-    right:0px
+    position: absolute;
+    left: 200px;
 }
 
 #canvas-draft{
     background-color: transparent;
 }
-body{
-    overflow:hidden;
-    user-select: none;
+
+
+/*---Navbar---*/
+.navbar {
+    background: #616161;
+    position: relative;
 }
-#canvas-container{
-    height:1000px;
-}  
+
+.navbar-brand > img {
+    height: 60px;
+    width: 60px;
+}
+
+/* #btn-trigger {
+    display: none;
+} */
+
+/*---Toolbar---*/
+.wrapper {
+    position: relative;
+    min-width: 200px;
+    max-width: 200px;
+    height: 300px;
+}
+
+#sidebar {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 70px 70px;
+    grid-template-rows: 70px 70px 70px 70px;
+    justify-content: center;
+}
+
+#sidebar-2 {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 140px;
+    grid-template-rows: 50px 50px 50px;
+    justify-content: center;
+}
+
+#rect-img {
+    height: 30px;
+    width: 40px;
+}
+
+#sidebar > button {
+    background-color: #f7da35;
+    border-radius: 40px !important;
+    height: 70px;
+    width: 70px;
+}
+
+button > i {
+    font-size: 30px;
+}
+
+#sidebar-2 > button {
+    background: #616161;
+    color: #ffffff;
+    border-radius: 5px !important;
+}
