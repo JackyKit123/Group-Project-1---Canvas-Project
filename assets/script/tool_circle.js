@@ -33,7 +33,6 @@ class DrawingCircle extends PaintFunction {
         const w = Math.abs(x1-x2);
         const x = Math.min(x1,x2);
         const y = Math.min(y1,y2);
-        console.log(h,w);
         
         $(which).drawEllipse({
             fillStyle: this.fillStyle,
