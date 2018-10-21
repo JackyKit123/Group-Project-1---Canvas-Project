@@ -30,30 +30,28 @@
             <img src="assets/img/html5-icon.png">
         </a>
 
-        <button class='btn btn-secondary btn-lg color-picker' id='btn-trigger' data-toggle="modal" data-target="#color-modal">
-            <div class='modal' id='color-modal'>
-                <div class='color_picker_container'>
-                    <div class='picker_field' style="background-color:red">
-                        <div id='selector'></div>
-                    </div>
-                    <div class='hue_picker_container'>
-                        <div class="hue_slider_container"><input type="range" min="0" max="360" value="360" class="color-slider hue_picker hue_picker_slider"></div>
-                        <div class="color_number_container"><input type="number" min="0" max="360" value="360" class="color-number hue_picker hue_picker_number"></div>
-                    </div>
-                    <div class='alpha_picker_container'>
-                        <div class="alpha_slider_container">
-                            <div id='grey_gradient'>
-                                <div>
-                                    <input type="range" min="0" max="100" value="100" class="color-slider alpha_picker alpha_picker_slider">
-                                </div>
+        <button id="color_picker">
+            <div class='color_preview_container'>
+                <div class='color_preview'>
+            </div>
+            <div class='color_picker_container'>
+                <div class='picker_field' style="background-color:red">
+                    <div id='selector'></div>
+                </div>
+                <div class='hue_picker_container'>
+                    <div class="hue_slider_container"><input type="range" min="0" max="360" value="360" class="color-slider hue_picker hue_picker_slider"></div>
+                    <div class="color_number_container"><input type="number" min="0" max="360" value="360" class="color-number hue_picker hue_picker_number"></div>
+                </div>
+                <div class='alpha_picker_container'>
+                    <div class="alpha_slider_container">
+                        <div id='grey_gradient'>
+                            <div>
+                                <input type="range" min="0" max="100" value="100" class="color-slider alpha_picker alpha_picker_slider">
                             </div>
-                            <div id='alpha_background'></div>
                         </div>
-                        <div class="color_number_container"><input type="number" min="0" max="100" value="100" class="color-number alpha_picker alpha_picker_number"></div>
+                        <div id='alpha_background'></div>
                     </div>
-                    <div class='color_preview_container'>
-                        <div class='color_preview'></div>
-                    </div>
+                    <div class="color_number_container"><input type="number" min="0" max="100" value="100" class="color-number alpha_picker alpha_picker_number"></div>
                 </div>
             </div>
         </button>
@@ -112,11 +110,11 @@
                 <button><span id="clear-canvas">Erase All</span></button>
 
                 <button>
-                    <i class="fas fa-undo"></i>
+                    <i id="undo" class="fas fa-undo"></i>
                 </button>
 
                 <button>
-                    <i class="fas fa-redo"></i>
+                    <i id="redo" class="fas fa-redo"></i>
                 </button>
             </nav>
         </div>
@@ -128,7 +126,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/jcanvas.js"></script>
-    
+
     <!--Functions-->
     <script type='text/javascript' src="assets/script/canvas-common.js"></script>
     <script type='text/javascript' src="assets/script/tool_pencil.js"></script>

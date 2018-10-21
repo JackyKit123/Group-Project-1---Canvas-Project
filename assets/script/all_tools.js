@@ -1,4 +1,9 @@
 $(function () {
+    $('#color_picker').on('click', () => {
+        $('.color_picker_container').toggle("slow");
+        
+    })
+
     currentFunction = new Pencil();
 
     $('#drawing-rectangle').on('click', () => {
@@ -18,8 +23,8 @@ $(function () {
     $('#clear-canvas').on('click', () => {
         if (confirm('Erase All will remove all your work and changes cannot be undone, Sure?')) {
             $('.canvas').clearCanvas();
-            /* $('.canvas').removeLayers()
-            $('#undo, #redo').prop('disabled', true); */
+            $('.canvas').removeLayers()
+            $('#undo, #redo').prop('disabled', true);
             }
     });
 });
