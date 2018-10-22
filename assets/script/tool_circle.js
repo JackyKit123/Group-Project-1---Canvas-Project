@@ -22,6 +22,7 @@ class DrawingCircle extends PaintFunction {
         if (this.dragging) {
             this.mouseEndX = coord[0];
             this.mouseEndY = coord[1];
+            resetUndo();
             this.draw(this.mouseBeginX, this.mouseBeginY, this.mouseEndX, this.mouseEndY, '#canvas-real');
             this.dragging = false;
             $('#canvas-draft').clearCanvas()
@@ -33,8 +34,13 @@ class DrawingCircle extends PaintFunction {
         const w = Math.abs(x1-x2);
         const x = Math.min(x1,x2);
         const y = Math.min(y1,y2);
-        
+        if (which == '#canvas-draft') {
+            var printLayer = false;
+        } else {
+            var printLayer = true;
+        }
         $(which).drawEllipse({
+            layer: printLayer,
             fillStyle: this.fillStyle,
             strokeStyle: this.strokeStyle,
             strokeWidth: this.strokeWidth,

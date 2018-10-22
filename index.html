@@ -12,8 +12,8 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/stylesheets/main.css">
     <link rel="stylesheet" href="assets/stylesheets/reset.css">
+    <link rel="stylesheet" href="assets/stylesheets/main.css">    
     <link rel="stylesheet" href="assets/stylesheets/color_picker.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
@@ -30,31 +30,42 @@
             <img src="assets/img/html5-icon.png">
         </a>
 
-        <button id="color_picker">
-            <div class='color_preview_container'>
-                <div class='color_preview'>
-            </div>
-            <div class='color_picker_container'>
-                <div class='picker_field' style="background-color:red">
-                    <div id='selector'></div>
-                </div>
-                <div class='hue_picker_container'>
-                    <div class="hue_slider_container"><input type="range" min="0" max="360" value="360" class="color-slider hue_picker hue_picker_slider"></div>
-                    <div class="color_number_container"><input type="number" min="0" max="360" value="360" class="color-number hue_picker hue_picker_number"></div>
-                </div>
-                <div class='alpha_picker_container'>
-                    <div class="alpha_slider_container">
-                        <div id='grey_gradient'>
-                            <div>
-                                <input type="range" min="0" max="100" value="100" class="color-slider alpha_picker alpha_picker_slider">
+        <div class="navbar-collapse">
+            <div class="navbar-nav">
+                <div class="nav-item align-left">
+                    <span class='btn btn-secondary color_picker' type='text'>
+                        <div class='color_preview_container'>
+                            <div class='color_preview'>
+                        </div>
+                        <div class='color_picker_container'>
+                            <div class='picker_field' style="background-color:red">
+                                <div id='selector'></div>
+                            </div>
+                            <div class='hue_picker_container'>
+                                <div class="hue_slider_container"><input type="range" min="0" max="360" value="360"
+                                        class="color-slider hue_picker hue_picker_slider"></div>
+                                <div class="color_number_container"><input type="number" min="0" max="360" value="360"
+                                        class="color-number hue_picker hue_picker_number"></div>
+                            </div>
+                            <div class='alpha_picker_container'>
+                                <div class="alpha_slider_container">
+                                    <div id='grey_gradient'>
+                                        <div>
+                                            <input type="range" min="0" max="100" value="100" class="color-slider alpha_picker alpha_picker_slider">
+                                        </div>
+                                    </div>
+                                    <div id='alpha_background'></div>
+                                </div>
+                                <div class="color_number_container">
+                                    <input type="number" min="0" max="100" value="100"
+                                        class="color-number alpha_picker alpha_picker_number">
+                                </div>
                             </div>
                         </div>
-                        <div id='alpha_background'></div>
-                    </div>
-                    <div class="color_number_container"><input type="number" min="0" max="100" value="100" class="color-number alpha_picker alpha_picker_number"></div>
-                </div>
-            </div>
-        </button>
+                    </span>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <section id="canvas-mainboard">
@@ -73,48 +84,36 @@
                     <img src="assets/img/rectangle.png" id="rect-img">
                 </button>
 
-                <button>
-                    <i id="drawing-circle" class="far fa-circle"></i>
+                <button id="drawing-circle">
+                    <i class="far fa-circle"></i>
                 </button>
 
                 <button>
                     <i class="fas fa-draw-polygon"></i>
                 </button>
 
-                <button>
-                    <i id="drawing-line" class="fas fa-slash"></i>
+                <button id="drawing-line">
+                    <i class="fas fa-slash"></i>
                 </button>
 
-                <button>
-                    <i id="pencil" class="fas fa-pencil-alt"></i>
+                <button id="pencil">
+                    <i class="fas fa-pencil-alt"></i>
                 </button>
 
                 <button>
                     <i class="fas fa-font"></i>
                 </button>
-
-                <!-- 
-                <button><span id="drawing-line">Drawing Line</span></button>
-                <button><span id="pencil">Pencil</span></button>
-                <button><span id="clear-canvas">Erase All</span></button>
-                </div>
-
-            <div class="undo-redo">
-                <button><span id="undo">Undo</span></button>
-                <button><span id="redo">Redo</span></button>
-            </div> -->
-
             </nav>
 
             <nav id="sidebar-2">
                 <button><span id="clear-canvas">Erase All</span></button>
 
-                <button>
-                    <i id="undo" class="fas fa-undo"></i>
+                <button id="undo">
+                    <i class="fas fa-undo"></i>
                 </button>
 
-                <button>
-                    <i id="redo" class="fas fa-redo"></i>
+                <button id="redo">
+                    <i class="fas fa-redo"></i>
                 </button>
             </nav>
         </div>

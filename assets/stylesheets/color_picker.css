@@ -1,6 +1,6 @@
 .color_picker_container { /* Henry can edit*/
     height: 100px; /* Henry can edit*/
-    width:100%; /* Henry can edit*/
+    width: 100%; /* Henry can edit*/
 }
 .picker_field {
 	height: 90%;
@@ -60,8 +60,8 @@
     background: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
 }
 .color_preview_container{ /* Henry can edit*/
-    height: 50px; /* Henry can edit*/
-    width: 50px; /* Henry can edit*/
+    height: 60px; /* Henry can edit*/
+    width: 10%; /* Henry can edit*/
     background-image: url("https://orig00.deviantart.net/7e7c/f/2016/249/4/2/checkered_tile___seamless_pattern_by_carmenms-dagogpg.png");
     background-size: contain;
 }
@@ -73,6 +73,6 @@
 }
 .color_preview {
     height: 100%;
-    width:100%;
+    width: 100%;
     background-color:hsla(360,100%,50%,1);
 }

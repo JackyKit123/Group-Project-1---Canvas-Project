@@ -1,7 +1,12 @@
 $(function () {
-    $('#color_picker').on('click', () => {
-        $('.color_picker_container').toggle("slow");
-        
+    $('.color_picker').on('click', () => {
+        $('.color_picker_container').slideToggle("slow", function(){
+            if($('.color_picker').val() == "close") {
+                $('.color_picker_container').show();
+            } else {
+                $('.color_picker').val("close");
+            }
+        });        
     })
 
     currentFunction = new Pencil();
