@@ -1,7 +1,3 @@
-$('#btn-trigger').on('click', function (e){
-    $($(this).attr("data-target")).modal("show");
-});
-
 let color_picker_dragging = false;
 $('.picker_field').on('mousedown', function (e) {
   color_picker_dragging = true;

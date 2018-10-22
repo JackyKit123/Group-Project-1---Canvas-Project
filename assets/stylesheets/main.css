@@ -25,6 +25,7 @@ body{
     position: relative;
     display: flex;
     flex-wrap: nowrap !important;
+    z-index: 20;
 }
 
 .navbar-brand > img {
@@ -33,12 +34,10 @@ body{
 }
 
 .color_picker {
-    height: 40px;
-    width: 30px;    
-}
-
-.container_picker_container {
-    display: none;
+    height: 60px;
+    width: 60px; 
+    margin-bottom: 2px;
+    margin-right: 2px;
 }
 
 /*---Toolbar---*/
