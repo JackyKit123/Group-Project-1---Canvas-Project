@@ -37,11 +37,11 @@ class DrawingStraightLine extends PaintFunction {
         }
         $(which).drawLine({
             layer: printLayer,
-            strokeWidth: this.strokeWidth,
-            strokeDash: [this.strokeDash],
-            strokeStyle: this.strokeStyle,
-            startArrow: this.strokeArrow,
-            arrowRadius: this.strokeWidth + 10,
+            strokeWidth: strokeWidth,
+            strokeDash: [strokeDash],
+            strokeStyle: strokeStyle,
+            startArrow: strokeArrow,
+            arrowRadius: strokeWidth + 10,
             arrowAngle: 90,
             x1: x2, y1: y2,
             x2: x1, y2: y1,            
