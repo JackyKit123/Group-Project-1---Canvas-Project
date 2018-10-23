@@ -91,5 +91,10 @@
 .color_preview {
     height: 100%;
     width: 100%;
-    background-color:hsla(360,100%,50%,1);
+}
+.color_preview.fill {
+    background-color:hsla(360,100%,50%,0);
+}
+.color_preview.stroke {
+    background-color:hsla(360,100%,0%,1);
 }

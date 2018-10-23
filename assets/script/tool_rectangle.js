@@ -41,9 +41,9 @@ class DrawingRectangle extends PaintFunction {
         }
         $(which).drawRect({
             layer: printLayer,
-            fillStyle: this.fillStyle,
-            strokeStyle: this.strokeStyle,
-            strokeWidth: this.strokeWidth,
+            fillStyle: fillStyle,
+            strokeStyle: strokeStyle,
+            strokeWidth: strokeWidth,
             x: x, y: y,
             height: h,
             width: w,

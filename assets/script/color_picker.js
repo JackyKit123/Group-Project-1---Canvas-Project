@@ -1,19 +1,24 @@
 
-$('.color_preview.fill').on('click', () => {
+$('.color_preview.fill').on('click', (e) => {
+  e.stopPropagation()
   if($('.color_picker_container.stroke').is(":visible")) {
     $('.color_picker_container.stroke').hide();
   }
   $('.color_picker_container.fill').slideDown("slow");
   
 })
-$('.color_preview.stroke').on('click', () => {
+$('.color_preview.stroke').on('click', (e) => {
+  e.stopPropagation()
   if($('.color_picker_container.fill').is(":visible")) {
     $('.color_picker_container.fill').hide();
   }
   $('.color_picker_container.stroke').slideDown("slow");
 })
+$('.color_picker_container').on('click', (e) => {
+  e.stopPropagation()
+})
 $('html').on('click', (e) => {
-  /* console.log(e.target) */
+  $('.color_picker_container').slideUp("slow");
 })
 
 let color_picker_dragging = false;
@@ -41,7 +46,7 @@ $('.color-slider').on('input', function () {
   $('.hue_picker_number.stroke').val($('.hue_picker_slider.stroke').val());
   setColor();
 })
-let l = "50%";
+let l = "100%";
 let s = "100%";
 function setColor(e) {
   if($('.color_picker_container.fill').is(":visible")) {
@@ -54,6 +59,7 @@ function setColor(e) {
   const a = $('.alpha_picker.fill').val() / 100;
   $('.picker_field.fill').css({ 'background-color': `hsla(${h},100%,50%,1)` })
   $('.color_preview.fill').css({ 'background-color': `hsla(${h},${s},${l},${a})` })
+  fillStyle = `hsla(${h},${s},${l},${a})`
 } else if ($('.color_picker_container.stroke').is(":visible")) {
   const h = $('.hue_picker.stroke').val()
   if (e) {
@@ -64,5 +70,6 @@ function setColor(e) {
   const a = $('.alpha_picker.stroke').val() / 100;
   $('.picker_field.stroke').css({ 'background-color': `hsla(${h},100%,50%,1)` })
   $('.color_preview.stroke').css({ 'background-color': `hsla(${h},${s},${l},${a})` })
+  strokeStyle = `hsla(${h},${s},${l},${a})`
 }
 }
