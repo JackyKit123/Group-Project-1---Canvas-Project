@@ -9,7 +9,7 @@ $('#canvas-draft')
     })
     .mouseenter(function (e) {
         currentFunction.onMouseEnter([e.offsetX, e.offsetY], e);
-    });
+    })
 $('html')
     .mouseup(function (e) {
         currentFunction.onMouseUp([e.offsetX, e.offsetY], e);
@@ -18,34 +18,19 @@ $('html')
         currentFunction.onMouseMove([e.offsetX, e.offsetY], e);
     })
 
+let strokeStyle = 'black';
+let fillStyle = 'hsla(0,100%,100%,0)';
+let strokeWidth = 1;
+let strokeDash = 0;
+let strokeArrow = false;
+let dragging = false;
+
 class PaintFunction {
     constructor() {
-        this.strokeStyle = 'black';
-        this.fillStyle = 'hsla(0,100%,100%,0)';
-        this.strokeWidth = 1;
-        this.strokeDash = 0;
-        this.strokeArrow = false;
-        this.dragging = false;
     }
     onMouseDown() { }
     onMouseMove() { }
     onMouseUp() { }
     onMouseLeave() { }
     onMouseEnter() { }
-
-    changeStrokeStyle(style) {
-        this.strokeStyle = style;
-    }
-    changeFillStyle(style) {
-        this.fillStyle = style;
-    }
-    changeStrokeWidth(width) {
-        this.strokeWidth = width;
-    }
-    changeStrokeDash(boolean) {
-        boolean ? this.strokeDash = this.strokeWidth * 10 : this.strokeDash = 0;
-    }
-    changeStrokeArrow(boolean) {
-        this.strokeArrow = boolean;
-    }
 }    
