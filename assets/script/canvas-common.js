@@ -1,20 +1,20 @@
 let currentFunction;
 
 $('#canvas-draft')
-    .mousedown(function (e) {
+    .on('mousedown', e => {
         currentFunction.onMouseDown([e.offsetX, e.offsetY], e);
     })
-    .mouseleave(function (e) {
+    .on('mouseleave', e => {
         currentFunction.onMouseLeave([e.offsetX, e.offsetY], e);
     })
-    .mouseenter(function (e) {
+    .on('mouseenter', e => {
         currentFunction.onMouseEnter([e.offsetX, e.offsetY], e);
     })
 $('html')
-    .mouseup(function (e) {
+    .on('mouseup', e => {
         currentFunction.onMouseUp([e.offsetX, e.offsetY], e);
     })
-    .mousemove(function (e) {
+    .on('mousemove', e => {
         currentFunction.onMouseMove([e.offsetX, e.offsetY], e);
     })
 
