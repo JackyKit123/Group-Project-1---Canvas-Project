@@ -9,6 +9,7 @@ body{
 
 #canvas-draft, 
 #canvas-real {
+    cursor: crosshair;
     border:1px black dotted;
     position: absolute;
     left: 200px;
@@ -82,9 +83,19 @@ body{
 button > i {
     font-size: 30px;
 }
+#undo #redo {
+    color: grey;
+}
 
 #sidebar-2 > button {
     background: #616161;
-    color: #ffffff;
     border-radius: 5px !important;
+}
+
+#undo #redo {
+    color: grey;
+}
+
+#clear-canvas {
+    color: white;
 }
