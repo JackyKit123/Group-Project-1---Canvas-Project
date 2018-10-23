@@ -33,6 +33,7 @@ body{
     width: 60px;
 }
 
+/*--Color Picker Button--*/
 .color_picker {
     background: transparent !important;
     height: 60px;
@@ -40,6 +41,14 @@ body{
     margin-bottom: 2px;
     margin-right: 2px;
 }
+
+.color-button {
+    margin-bottom: 0px;
+    text-align: center;
+    color: #ffffff;
+}
+
+
 
 /*---Toolbar---*/
 .wrapper {
@@ -88,3 +97,10 @@ button > i {
     color: #ffffff;
     border-radius: 5px !important;
 }
+
+#undo #redo {
+    color: grey;
+}
+ #clear-canvas {
+    color: white;
+ }

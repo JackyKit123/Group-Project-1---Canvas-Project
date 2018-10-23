@@ -62,11 +62,14 @@ $("#redo").on('click', function () {
         }
         //disable the redo button if there is nothing more to be redone
         if (undoIndex == -1) {
-            $('#redo').prop('disabled', true); 
+            $('#redo').prop('disabled', true);
+            $('#redo').css('background', "yellow");
+        } else {
+            $('#redo').css('background', '#616161');
         }
         //enable the undo button
         if (Math.abs(undoIndex) <= $('#canvas-real').getLayers().length) {
-            $('#undo').prop('disabled', false); 
+            $('#undo').prop('disabled', false);
         }
     }
 })

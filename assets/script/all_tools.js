@@ -26,6 +26,10 @@
         if (confirm('Erase All will remove all your work and changes cannot be undone, Sure?')) {
             $('.canvas').clearCanvas();
             $('.canvas').removeLayers()
-            $('#undo, #redo').prop('disabled', true);
+            $('#undo, #redo').prop('disabled', true).css({'color':'grey'})
             }
     });
+
+    function updateWidthInput(val) {
+        document.getElementById('strokeWidthInput').value=val;
+    }
