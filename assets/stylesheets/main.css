@@ -21,7 +21,7 @@ body{
 
 /*---Navbar---*/
 .navbar {
-    background: #616161;
+    background: linear-gradient(45deg, #adadad, #4c4944);
     position: relative;
     display: flex;
     flex-wrap: nowrap !important;
@@ -34,6 +34,7 @@ body{
 }
 
 .color_picker {
+    background: transparent !important;
     height: 60px;
     width: 60px; 
     margin-bottom: 2px;
@@ -43,14 +44,16 @@ body{
 /*---Toolbar---*/
 .wrapper {
     position: relative;
+    margin-top: 0;
     min-width: 200px;
     max-width: 200px;
-    height: 300px;
+    height: calc(150vh - 200px);
+    background: linear-gradient(150deg, #adadad, #4c4944);
 }
 
 #sidebar {
-    margin-top: 50px;
     display: grid;
+    padding-top: 50px;
     grid-template-columns: 70px 70px;
     grid-template-rows: 70px 70px 70px 70px;
     justify-content: center;
@@ -71,7 +74,7 @@ body{
 
 #sidebar > button {
     background-color: #f7da35;
-    border-radius: 40px !important;
+    border-radius: 70% !important;
     height: 70px;
     width: 70px;
 }
