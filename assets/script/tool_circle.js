@@ -1,12 +1,12 @@
-class DrawingStraightLine extends PaintFunction {
+class DrawingCircle extends PaintFunction {
     constructor() {
         super();
     }
 
     onMouseDown(coord, event) {
-        this.dragging = true;
-        this.mouseBeginX = coord[0];
-        this.mouseBeginY = coord[1];
+            this.dragging = true;
+            this.mouseBeginX = coord[0];
+            this.mouseBeginY = coord[1];
     }
 
     onMouseMove(coord, event) {
@@ -30,22 +30,24 @@ class DrawingStraightLine extends PaintFunction {
     }
 
     draw(x1, y1, x2, y2, which) {
+        const h = Math.abs(y1-y2);
+        const w = Math.abs(x1-x2);
+        const x = Math.min(x1,x2);
+        const y = Math.min(y1,y2);
         if (which == '#canvas-draft') {
             var printLayer = false;
         } else {
             var printLayer = true;
         }
-        $(which).drawLine({
+        $(which).drawEllipse({
             layer: printLayer,
-            strokeWidth: this.strokeWidth,
-            strokeDash: [this.strokeDash],
+            fillStyle: this.fillStyle,
             strokeStyle: this.strokeStyle,
-            startArrow: this.strokeArrow,
-            arrowRadius: this.strokeWidth + 10,
-            arrowAngle: 90,
-            x1: x2, y1: y2,
-            x2: x1, y2: y1,            
+            strokeWidth: this.strokeWidth,
+            x: x, y: y,
+            height: h,
+            width: w,
+            fromCenter: false
         })
-    } 
+    }
 }
-

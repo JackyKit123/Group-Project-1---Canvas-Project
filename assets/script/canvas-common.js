@@ -9,7 +9,7 @@ $('#canvas-draft')
     })
     .mouseenter(function (e) {
         currentFunction.onMouseEnter([e.offsetX, e.offsetY], e);
-    });
+    })
 $('html')
     .mouseup(function (e) {
         currentFunction.onMouseUp([e.offsetX, e.offsetY], e);
