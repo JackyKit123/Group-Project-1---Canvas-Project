@@ -14,7 +14,7 @@ $('html')
     .on('mouseup', e => {
         currentFunction.onMouseUp([e.offsetX, e.offsetY], e);
     })
-    .on('mousemove', e =>  {
+    .on('mousemove', e => {
         currentFunction.onMouseMove([e.offsetX, e.offsetY], e);
     })
 
