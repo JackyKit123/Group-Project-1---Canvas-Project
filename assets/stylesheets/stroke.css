@@ -1,12 +1,12 @@
 /* Stroke Width Range */
-.strokeWidthItem,
-.strokeDashItem {
+.stroke_width_item,
+.stroke_dash_item {
     margin-top: 20px;    
 }
 
-.strokeWidthButton,
-.strokeDashButton,
-.strokeArrowButton {
+.stroke_width_button,
+.stroke_dash_button,
+.stroke_arrow_button {
     width: 60px;
     height: 60px;
     display: flex;
@@ -20,7 +20,7 @@
     margin-left: -2px;
 }
 
-.strokeWidth_container {
+.stroke_width_container {
     position: relative;
     margin-top: 22px;
     margin-left: -60px;
@@ -29,7 +29,7 @@
     text-align: center;
 }
 
-#strokeWidthInput {
+#stroke_width_input {
     width: 30px;
     height: 30px;
     border-radius: 5px;

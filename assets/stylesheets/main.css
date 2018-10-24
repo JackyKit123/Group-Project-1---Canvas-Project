@@ -98,9 +98,10 @@ button > i {
     border-radius: 5px !important;
 }
 
-#undo #redo {
+#undo, #redo {
     color: grey;
 }
- #clear-canvas {
+
+#clear-canvas {
     color: white;
- }
+}

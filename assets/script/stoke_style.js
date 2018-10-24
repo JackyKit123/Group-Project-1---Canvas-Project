@@ -1,34 +1,41 @@
 $(function() {
-    $('.strokeWidth_container').hide();
+    $('.stroke_width_container').hide();
     if($('#drawing-circle, #drawing-polygon, #drawing-rectangle').on('click', e => {
-        $('.strokeDashButton').slideDown();
+        $('.stroke_dash_button').slideDown();
     })) 
-    $('.strokeDashButton').hide(); 
+    $('.stroke_dash_button').hide(); 
     
     if($('#drawing-line').on('click', e => {
-        $('.strokeArrowButton, .strokeDashButton').slideDown();
+        $('.stroke_arrow_button, .stroke_dash_button').slideDown();
     }))
-    $('.strokeArrowButton, .strokeDashButton').hide();
+    $('.stroke_arrow_button, .stroke_dash_button').hide();
 
-    $('.strokeWidthButton').on('click', (e) => {
+    $('.stroke_width_button').on('click', (e) => {
         e.stopPropagation()
-        if ($('.strokeWidth_container').is(":visible")) {
-            $('.strokeWidth_container').hide();
+        if ($('.sstroke_width_container').is(":visible")) {
+            $('.stroke_width_container').hide();
         }
-        $('.strokeWidth_container').slideDown("slow");
+        $('.stroke_width_container').slideDown("slow");
     })
 
-    $('.strokeWidth_container').on('click', (e) => {
+    $('.stroke_width_container').on('click', (e) => {
         e.stopPropagation()
     })
 
     $('html').on('click', (e) => {
-        $('.strokeWidth_container').slideUp("slow");
+        $('.stroke_width_container').slideUp("slow");
     }) 
 
+    /* $('#stroke_width_input_slider').on('input', function(){
+        $('#stroke_width_input_slider').val($('#stroke_width_input').val());
+        setstrokeWidth();
+    })
+ */
+    /* function setstrokeWidth (e) {
+        if($('.stroke_width_container').is(":visible")) {
 
-    function setstrokeWidth (e) {
+        }
         strokeWidth = $('#strokeWidth').val();
-    }
+    } */
 
 })

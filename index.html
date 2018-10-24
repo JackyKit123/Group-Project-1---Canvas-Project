@@ -100,21 +100,21 @@
                         </div>
                     </span>
                 </div>
-                <div class="nav-item-custom strokeWidthItem">
-                    <span class="btn btn-secondary strokeWidthButton">
+                <div class="nav-item-custom stroke_width_item">
+                    <span class="btn btn-secondary stroke_width_button">
                         <i class="fas fa-text-width"></i>
-                        <div class='strokeWidth_container'>
-                            <div id='strokeInputBox'>
-                                <input id="strokeWidthInput" type="text" value="" placeholder='35'>
+                        <div class='stroke_width_container'>
+                            <div>
+                                <input id="stroke_width_input" type="text" min='10' max='60' value='35'>
                             </div>
-                            <div id='strokeWidth'>
-                                <input type='range' name='Width' min='10' max='60' oninput="updateWidthInput(this.value)">
+                            <div>
+                                <input id='stroke_width_input_slider' type='range' name='Width' min='10' max='60' value='35' oninput="updateWidthInput(this.value)">
                             </div>
                         </div>
                     </span>
                 </div>
-                <div class="nav-item-custom strokeDashItem mx-auto">
-                    <span class="btn btn-secondary strokeDashButton">
+                <div class="nav-item-custom stroke_dash_item mx-auto">
+                    <span class="btn btn-secondary stroke_dash_button">
                         <img id="dash-icon" src="assets/img/dash-512.png">
                         <!-- <div class='strokeWidth_container'>
                             <div id='strokeInputBox'>
@@ -125,7 +125,7 @@
                             </div>
                         </div> -->
                     </span>
-                    <span class="btn btn-secondary strokeArrowButton">
+                    <span class="btn btn-secondary stroke_arrow_button">
                         <img id="arrow-icon" src="assets/img/right_arrow-512.png">
                     </span>
                 </div>
