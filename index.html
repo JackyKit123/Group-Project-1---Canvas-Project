@@ -20,6 +20,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Schoolbell" rel="stylesheet">
 </head>
 
 <body>
@@ -30,6 +31,7 @@
         <a class="navbar-brand" href="#">
             <img src="assets/img/Art-icon.png">
         </a>
+        <p> Draw yourself</p>
 
         <div class="navbar-collapse">
             <div class="navbar-nav-custom">
@@ -101,6 +103,7 @@
                     </span>
                 </div>
                 <div class="nav-item-custom stroke_width_item">
+                    <p class="stroke-button">Width</p>
                     <span class="btn btn-secondary stroke_width_button">
                         <i class="fas fa-text-width"></i>
                         <div class='stroke_width_container'>
@@ -113,18 +116,14 @@
                         </div>
                     </span>
                 </div>
-                <div class="nav-item-custom stroke_dash_item mx-auto">
+                <div class="nav-item-custom stroke_dash_item">
+                    <p class="stroke-button">Dash</p>
                     <span class="btn btn-secondary stroke_dash_button">
                         <img id="dash-icon" src="assets/img/dash-512.png">
-                        <!-- <div class='strokeWidth_container'>
-                            <div id='strokeInputBox'>
-                                <input id="strokeWidthInput" type="text" value="" placeholder='35'>
-                            </div>
-                            <div id='strokeWidth'>
-                                <input type='range' name='Width' min='10' max='60' oninput="updateWidthInput(this.value)">
-                            </div>
-                        </div> -->
                     </span>
+                </div>
+                <div class="nav-item-custom stroke_arrow_item">
+                    <p class="stroke-button">Arrow</p>
                     <span class="btn btn-secondary stroke_arrow_button">
                         <img id="arrow-icon" src="assets/img/right_arrow-512.png">
                     </span>
