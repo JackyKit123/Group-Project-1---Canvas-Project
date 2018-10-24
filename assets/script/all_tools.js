@@ -29,3 +29,7 @@
             $('#undo, #redo').prop('disabled', true).css({'color':'grey'})
             }
     });
+
+    function updateWidthInput(val) {
+        document.getElementById('strokeWidthInput').value=val;
+    }
