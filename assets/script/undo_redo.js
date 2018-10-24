@@ -32,7 +32,7 @@ $("#redo").on('click', function () {
             }, 0);
         }
         //disable the redo button if there is nothing more to be redone
-        if (undoIndex == -1) {
+        if (undoIndex == -1){
             $('#redo').prop('disabled', true).css({'color':'grey'});
         }
         //enable the undo button
