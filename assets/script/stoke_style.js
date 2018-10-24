@@ -26,16 +26,13 @@ $(function() {
         $('.stroke_width_container').slideUp("slow");
     }) 
 
-    /* $('#stroke_width_input_slider').on('input', function(){
-        $('#stroke_width_input_slider').val($('#stroke_width_input').val());
+
+    //Set width function
+    $('.stroke_width_input_slider').on('input', function(){
+        $('.stroke_width_input').val($('.stroke_width_input_slider').val());
         setstrokeWidth();
     })
- */
-    /* function setstrokeWidth (e) {
-        if($('.stroke_width_container').is(":visible")) {
 
-        }
-        strokeWidth = $('#strokeWidth').val();
-    } */
-
+    function setstrokeWidth (e) {
+        strokeWidth = $('.stroke_width_input').val();    }
 })
