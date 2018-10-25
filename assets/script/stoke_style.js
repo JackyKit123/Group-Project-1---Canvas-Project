@@ -44,7 +44,6 @@ $(function () {
     //Set dash function
     let clickCount = 0;
 
-    // clickCount = (clickCount == 2) ? 0 : clickCount;
     $('.stroke_dash_button').on('click',function () {
         clickCount++;
         if (clickCount % 2 == 0) {
