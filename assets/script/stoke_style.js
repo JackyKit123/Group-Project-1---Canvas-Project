@@ -50,7 +50,6 @@ $(function () {
             strokeDash = 0;
         } else {
             strokeDash = [strokeWidth + 10];
-            $('.stroke_dash_button').css('background','rgba(255, 180, 109)');
         };
     });
 
