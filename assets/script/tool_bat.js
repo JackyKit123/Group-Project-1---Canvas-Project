@@ -45,7 +45,7 @@ class DrawingBat extends PaintFunction {
         }
         $(which).drawImage({
             layer: printLayer,
-            crossOrigin: 'annoynymus',
+            crossOrigin: 'anoynymus',
             source: 'https://i.imgur.com/YR83CHT.png',
             x: x, y: y,
             height: h,
