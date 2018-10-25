@@ -13,9 +13,11 @@ $(function () {
     $('.stroke_width_button').on('click', (e) => {
         e.stopPropagation()
         if ($('.stroke_width_container').is(":visible")) {
-            $('.stroke_width_container').hide();
-        }
+            $('.stroke_width_container').slideUp("slow");
+        } else {
         $('.stroke_width_container').slideDown("slow");
+        $('.color_picker_container').slideUp("slow");
+        }
     })
 
     $('.stroke_width_container').on('click', (e) => {
