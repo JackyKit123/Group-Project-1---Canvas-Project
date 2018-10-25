@@ -33,6 +33,4 @@
             }
     });
 
-    function updateWidthInput(val) {
-        document.getElementById('strokeWidthInput').value=val;
-    }
+    
