@@ -44,4 +44,12 @@
         $('#download').attr("href",canvas.toDataURL());
         })
 
+    $('#sidebar button').on('click', function(){
+        if ($(this).is("active"))
+        $('#sidebar button').not(this).removeClass('active');
+      else
+        $(this).addClass('active');
+      $('#sidebar button').not(this).removeClass('active');
+    });
+
     

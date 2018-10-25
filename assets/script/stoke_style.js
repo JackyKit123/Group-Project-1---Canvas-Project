@@ -42,23 +42,24 @@ $(function () {
     }
 
     //Set dash function
-    let clickCount = 0;
+    let clickCountDash = 0;
 
     $('.stroke_dash_button').on('click',function () {
-        clickCount++;
-        if (clickCount % 2 == 0) {
+        clickCountDash++;
+        if (clickCountDash % 2 == 0) {
             strokeDash = 0;
         } else {
-            strokeDash = [strokeWidth + 10];
+            strokeDash = [strokeWidth + 2];
         };
     });
 
     //Set arrow function
+    let clickCountArrow = 0
     $('.stroke_arrow_button').click(function () {
-        clickCount++;
-        if (clickCount % 2 == 0) {
+        clickCountArrow++;
+        if (clickCountArrow % 2 == 0) {
             strokeArrow = false;
-        } else if (clickCount % 2 == 1) {
+        } else {
             strokeArrow = true;            
         }
     });
