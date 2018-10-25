@@ -127,7 +127,8 @@ body{
 }
 
 .btn:active,
-#sidebar > button:active {
+#sidebar > button:active,
+#sidebar-2 > button:active {
     background: rgb(255, 180, 109);
     transform: translateY(3px);
 }
@@ -137,12 +138,11 @@ button > i {
 }
 
 #sidebar-2 > button {
-    background: #949494;
+    background: rgba(148, 148, 148);
     border: 1px solid rgba(173, 173, 173);
     font-size: 22px;
     color: rgba(255, 255, 255);
     border-radius: 150px !important; 
-    transition: all ease 0.3s;   
 }
 
 #undo #redo {
