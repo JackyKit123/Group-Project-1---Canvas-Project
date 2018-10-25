@@ -25,7 +25,7 @@
         currentFunction = new DrawingText();
     });
     $('#drawing-pumpkin').on('click', () => {
-        currentFunciton = new DrawingPumpkin();
+        currentFunction = new DrawingPumpkin();
     });
     $('#drawing-bat').on('click', () => {
         currentFunction = new DrawingBat();
@@ -38,5 +38,10 @@
             $('#undo, #redo').prop('disabled', true).css({'color':'grey'})
             }
     });
+
+    $('#download').on('click',function() {
+        const canvas = document.getElementById('canvas-real')
+        $('#download').attr("href",canvas.toDataURL());
+        })
 
     

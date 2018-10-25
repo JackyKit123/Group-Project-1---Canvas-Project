@@ -118,18 +118,18 @@ body{
 
 .btn:hover,
 #sidebar > button:hover {
-    background: rgb(255, 180, 109);
+    background: rgba(255, 180, 109);
 }
 
 .btn:focus,
 #sidebar > button:focus {
-    background: rgb(255, 180, 109);
+    background: rgba(255, 180, 109);
 }
 
 .btn:active,
 #sidebar > button:active,
 #sidebar-2 > button:active {
-    background: rgb(255, 180, 109);
+    background: rgba(255, 180, 109);
     transform: translateY(3px);
 }
 
