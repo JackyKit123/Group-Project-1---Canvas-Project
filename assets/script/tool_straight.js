@@ -36,10 +36,12 @@ class DrawingStraightLine extends PaintFunction {
             var printLayer = true;
         }
         const arrowRadius = Math.max(parseInt(strokeWidth * 2), 15);
+        strokeDash = strokeDash;
+        strokeArrow = strokeArrow;
         $(which).drawLine({
             layer: printLayer,
             strokeWidth: strokeWidth,
-            strokeDash: [strokeDash],
+            strokeDash: strokeDash,
             strokeStyle: strokeStyle,
             startArrow: strokeArrow,
             arrowRadius: arrowRadius,
