@@ -32,7 +32,7 @@ class DrawingStar extends PaintFunction {
     draw(x1, y1, x2, y2, which) {
         const h = Math.abs(y1-y2);
         const w = h;
-        const r = x1-x2
+        let r = x1-x2
         const x = x1;
         const y = y1;
         if (which == '#canvas-draft') {
@@ -40,6 +40,7 @@ class DrawingStar extends PaintFunction {
         } else {
             var printLayer = true;
         }
+        if (shiftPressing) r = 0;
         $(which).drawPolygon({
             layer: printLayer,
             fillStyle: fillStyle,
