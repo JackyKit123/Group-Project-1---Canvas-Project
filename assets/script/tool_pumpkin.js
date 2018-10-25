@@ -30,11 +30,14 @@ class DrawingPumpkin extends PaintFunction {
     }
 
     draw(x1, y1, x2, y2, which) {
-        const h = Math.abs(y1-y2);
-        const w = Math.abs(x1-x2);
-        const x = Math.min(x1,x2);
-        const y = Math.min(y1,y2);
- 
+        let h = Math.abs(y1-y2);
+        let w = Math.abs(x1-x2);
+        let x = Math.min(x1,x2);
+        let y = Math.min(y1,y2);
+        h = w
+            if (y2<y1) {
+            y = y1 - h
+            }
         if (which == '#canvas-draft') {
             var printLayer = false;
         } else {
@@ -42,13 +45,11 @@ class DrawingPumpkin extends PaintFunction {
         }
         $(which).drawImage({
             layer: printLayer,
-            fillStyle: fillStyle,
-            strokeStyle: strokeStyle,
-            strokeWidth: strokeWidth,
             source: 'assets/img/pumpkin.png',
             x: x, y: y,
             height: h,
             width: w,
+            fromCenter: false
         });
-    }
+     }
 }
