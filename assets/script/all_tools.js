@@ -43,7 +43,6 @@
         const canvas = document.getElementById('canvas-real')
         $('#download').attr("href",canvas.toDataURL());
         })
-<<<<<<< HEAD
 
     $('#sidebar button').on('click', function(){
         if ($(this).is("active"))
@@ -53,6 +52,4 @@
       $('#sidebar button').not(this).removeClass('active');
     });
 
-=======
->>>>>>> master
     
