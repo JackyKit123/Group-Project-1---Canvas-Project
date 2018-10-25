@@ -52,6 +52,10 @@ body{
     width: 60px;
 }
 
+.color_picker.btn {
+    padding: 6px 12px 6px 12px;
+}
+
 /*--Color Picker Button--*/
 .color_picker {
     background: transparent !important;
@@ -68,8 +72,6 @@ body{
     color: #ffffff;
     font-size: 20px;
 }
-
-
 
 /*---Toolbar---*/
 .wrapper {
