@@ -26,10 +26,10 @@
     });
     $('#drawing-pumpkin').on('click', () => {
         currentFunciton = new DrawingPumpkin();
-    })
+    });
     $('#drawing-bat').on('click', () => {
         currentFunction = new DrawingBat();
-    })
+    });
 
     $('#clear-canvas').on('click', () => {
         if (confirm('Erase All will remove all your work and changes cannot be undone, Sure?')) {

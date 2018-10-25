@@ -6,11 +6,12 @@ body{
 
 #canvas-mainboard{
     position: relative;
+    cursor: crosshair;
 }
 
 #canvas-draft, 
 #canvas-real {
-    border:1px black;
+    border:1px rgba(0, 0, 0);
     box-shadow: 7px 7px 5px grey;
     position: absolute;
     left: 200px;
@@ -27,7 +28,7 @@ body{
 
 /*---Navbar---*/
 .navbar {
-    background: rgb(252, 143, 131);
+    background: rgba(252, 143, 131);
     position: relative;
     display: flex;
     flex-wrap: nowrap !important;
@@ -40,11 +41,6 @@ body{
     font-family: 'Alba-super';        
     font-size: 50px;
     text-align: center;
-    background: linear-gradient(to right, #e70909, #f7da35, #2466f5, #b707ec);
-    /* background-clip: text; */
-    /* -webkit-background-clip: text; */
-	/* -webkit-text-fill-color: transparent; */
-
 }
 
 .navbar-brand > img {
@@ -69,13 +65,13 @@ body{
 .stroke-button {
     margin-bottom: 0px;
     text-align: center;
-    color: #ffffff;
+    color: rgba(255, 255, 255);
     font-size: 20px;
 }
 
 /*---Toolbar---*/
 .wrapper {
-    background: #71E9FF;
+    background: rgba(113, 233, 255);
     position: relative;
     margin-top: 0;
     min-width: 200px;
@@ -112,16 +108,27 @@ body{
 }
 
 #sidebar > button {
-    background-color: rgb(250, 189, 133);
-    border: 1px solid #adadad;
+    background-color: rgb(253, 237, 8);
+    border: 1px solid rgba(173, 173, 173);
     border-radius: 150px !important;
     height: 70px;
     width: 70px;
-    box-shadow: 5px 2px 2px #474747;
+    box-shadow: 5px 2px 2px rgba(71,71,71);
+}
+
+.btn:hover,
+#sidebar > button:hover {
+    background: rgb(255, 180, 109);
+}
+
+.btn:focus,
+#sidebar > button:focus {
+    background: rgb(255, 180, 109);
 }
 
 .btn:active,
-button:active {
+#sidebar > button:active {
+    background: rgb(255, 180, 109);
     transform: translateY(3px);
 }
 
@@ -131,17 +138,17 @@ button > i {
 
 #sidebar-2 > button {
     background: #949494;
-    border: 1px solid #adadad;
+    border: 1px solid rgba(173, 173, 173);
     font-size: 22px;
-    color: #ffffff;
+    color: rgba(255, 255, 255);
     border-radius: 150px !important; 
     transition: all ease 0.3s;   
 }
 
 #undo #redo {
-    color: grey;    
+    color: rgba(128, 128, 128);    
 }
 
 #clear-canvas {
-    color: white;
+    color: rgba(255, 255, 255);
 }

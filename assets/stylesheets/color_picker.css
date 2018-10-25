@@ -1,5 +1,5 @@
 .color_picker_container {
-    background: grey;
+    background: rgba(128,128,128);
     padding: 5px 5px 5px 5px
 }
 .navbar-nav-custom {
@@ -27,8 +27,8 @@
     position:absolute;
     width:10px;
     height:10px;
-    border: 1px solid grey;
-    background: #fff;
+    border: 1px solid rgba(128,128,128);
+    background: rgba(255, 255, 255);
     border-radius: 5px;
     margin: -3px;
     left: 100%;
@@ -97,7 +97,7 @@
     width: 100%;
 }
 .color_preview.fill {
-    background-color:hsla(360,100%,50%,0);
+    background-color:rgba(255,0,0,0);
 }
 .color_preview.stroke {
     background-color:hsla(360,100%,0%,1);
