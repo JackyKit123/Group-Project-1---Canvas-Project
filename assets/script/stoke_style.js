@@ -44,15 +44,14 @@ $(function () {
     //Set dash function
     let clickCount = 0;
 
-    clickCount = (clickCount == 2) ? 0 : clickCount;
-    $('.stroke_dash_button').click(function () {
+    // clickCount = (clickCount == 2) ? 0 : clickCount;
+    $('.stroke_dash_button').on('click',function () {
         clickCount++;
         if (clickCount % 2 == 0) {
-            stokeDash = 0;
-        } else if (clickCount % 2 == 1) {
-            stokeDash = [strokeWidth + 10];
-        }
-        console.log(clickCount);
+            strokeDash = 0;
+        } else {
+            strokeDash = [strokeWidth + 10];
+        };
     });
 
     //Set arrow function

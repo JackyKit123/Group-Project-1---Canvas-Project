@@ -41,9 +41,9 @@ body{
     font-size: 50px;
     text-align: center;
     background: linear-gradient(to right, #e70909, #f7da35, #2466f5, #b707ec);
-    background-clip: text;
-    -webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+    /* background-clip: text; */
+    /* -webkit-background-clip: text; */
+	/* -webkit-text-fill-color: transparent; */
 
 }
 
@@ -128,7 +128,7 @@ button > i {
 }
 
 #sidebar-2 > button {
-    background: #616161;
+    background: #949494;
     border: 1px solid #adadad;
     font-size: 22px;
     color: #ffffff;
