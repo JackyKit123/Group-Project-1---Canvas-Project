@@ -31,9 +31,10 @@ class DrawingStar extends PaintFunction {
 
     draw(x1, y1, x2, y2, which) {
         const h = Math.abs(y1-y2);
-        const w = Math.abs(x1-x2);
-        const x = Math.min(x1,x2);
-        const y = Math.min(y1,y2);
+        const w = h;
+        const r = x1-x2
+        const x = x1;
+        const y = y1;
         if (which == '#canvas-draft') {
             var printLayer = false;
         } else {
@@ -46,14 +47,12 @@ class DrawingStar extends PaintFunction {
             strokeWidth: strokeWidth,
             x: x, y: y,
             radius:  Math.PI * (h),
-            rotate: x+y,
+            rotate: r,
             height: h,
             width: w,
             sides: 5,
             concavity: 0.5,
             fromCenter: true,
-
         })
-
     }
 }

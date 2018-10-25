@@ -9,6 +9,7 @@ body{
 
 #canvas-draft, 
 #canvas-real {
+    cursor: crosshair;
     border:1px black dotted;
     position: absolute;
     left: 200px;
@@ -32,7 +33,10 @@ body{
     height: 60px;
     width: 60px;
 }
-
+.color_picker.btn {
+    padding: 6px 12px 6px 12px;
+}
+/*--Color Picker Button--*/
 .color_picker {
     background: transparent !important;
     height: 60px;
@@ -40,6 +44,14 @@ body{
     margin-bottom: 2px;
     margin-right: 2px;
 }
+
+.color-button {
+    margin-bottom: 0px;
+    text-align: center;
+    color: #ffffff;
+}
+
+
 
 /*---Toolbar---*/
 .wrapper {
@@ -85,6 +97,12 @@ button > i {
 
 #sidebar-2 > button {
     background: #616161;
-    color: #ffffff;
     border-radius: 5px !important;
+}
+#undo #redo {
+    color: grey;
+}
+
+#clear-canvas {
+    color: white;
 }

@@ -1,21 +1,34 @@
 let currentFunction;
 
 $('#canvas-draft')
-    .mousedown(function (e) {
+    .on('mousedown', e => {
         currentFunction.onMouseDown([e.offsetX, e.offsetY], e);
     })
-    .mouseleave(function (e) {
+    .on('mouseleave', e => {
         currentFunction.onMouseLeave([e.offsetX, e.offsetY], e);
     })
-    .mouseenter(function (e) {
+    .on('mouseenter', e => {
         currentFunction.onMouseEnter([e.offsetX, e.offsetY], e);
     })
+    .on('dblclick', e => {
+        currentFunction.onDoubleClick([e.offsetX, e.offsetY], e);
+    })
 $('html')
-    .mouseup(function (e) {
+    .on('mouseup', e => {
         currentFunction.onMouseUp([e.offsetX, e.offsetY], e);
     })
-    .mousemove(function (e) {
+    .on('mousemove', e => {
         currentFunction.onMouseMove([e.offsetX, e.offsetY], e);
+    })
+    .on('keydown', e => {
+        if (e.shiftKey) {
+        shiftPressing = true
+        }
+        currentFunction.onKeyDown([e.offsetX, e.offsetY], e);
+    })
+    .on('keyup', e => {
+        shiftPressing = false
+        currentFunction.onKeyUp([e.offsetX, e.offsetY], e);
     })
 
 let strokeStyle = 'black';
@@ -24,6 +37,7 @@ let strokeWidth = 1;
 let strokeDash = 0;
 let strokeArrow = false;
 let dragging = false;
+let shiftPressing = false;
 
 class PaintFunction {
     constructor() {
@@ -33,4 +47,7 @@ class PaintFunction {
     onMouseUp() { }
     onMouseLeave() { }
     onMouseEnter() { }
+    onDoubleClick() { }
+    onKeyDown() { }
+    onKeyUp() { }
 }    
