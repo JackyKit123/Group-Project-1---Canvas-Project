@@ -54,7 +54,6 @@ $(function () {
     function setDash() {
         if (clickCountDash % 2 == 0) {
             strokeDash = 0;
-            console.log('clicked')
             $('.stroke_dash_button').css({'background':'transparent'});
             
         } else {
