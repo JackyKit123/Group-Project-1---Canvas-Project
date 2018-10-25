@@ -19,24 +19,18 @@ class Pencil extends PaintFunction {
     onMouseMove(coord, event) {
 
         if (this.dragging) {
-            this.mouseEndX = coord[0];
-            this.mouseEndY = coord[1];
             this.pencilLength++;
             $('#canvas-draft').clearCanvas()
-            this.draw(this.mouseEndX, this.mouseEndY, '#canvas-draft');
-            this.mouseBeginX = this.mouseEndX;
-            this.mouseBeginY = this.mouseEndY;
+            this.draw(coord[0], coord[1], '#canvas-draft');
         }
     }
 
     onMouseUp(coord, event) {
         if (this.dragging) {
-            this.mouseEndX = coord[0];
-            this.mouseEndY = coord[1];
             this.pencilLength++;
             resetUndo();
             this.dragging = false;
-            this.draw(this.mouseEndX, this.mouseEndY, '#canvas-real');
+            this.draw(coord[0], coord[1], '#canvas-real');
             $('#canvas-draft').clearCanvas()
             this.parameter = {
                 layer: true,
@@ -51,13 +45,11 @@ class Pencil extends PaintFunction {
 
     onMouseLeave(coord, event) {
         if (this.dragging) {
-            this.mouseEndX = coord[0];
-            this.mouseEndY = coord[1];
             this.pencilLength++;
             this.dragging = false;
             $('#canvas-draft').clearCanvas()
             resetUndo();
-            this.draw(this.mouseEndX, this.mouseEndY, '#canvas-real');
+            this.draw(coord[0], coord[1], '#canvas-real');
             this.parameter = {
                 layer: true,
                 strokeWidth: strokeWidth,
