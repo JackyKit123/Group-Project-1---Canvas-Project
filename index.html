@@ -20,6 +20,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Schoolbell" rel="stylesheet">
 </head>
 
 <body>
@@ -28,7 +29,7 @@
         <![endif]-->
     <nav class="navbar navbar-dark">
         <a class="navbar-brand" href="#">
-            <img src="assets/img/Art-icon.png">
+            <p> Draw</p>
         </a>
 
         <div class="navbar-collapse">
@@ -101,30 +102,27 @@
                     </span>
                 </div>
                 <div class="nav-item-custom stroke_width_item">
+                    <p class="stroke-button">Width</p>
                     <span class="btn btn-secondary stroke_width_button">
                         <i class="fas fa-text-width"></i>
                         <div class='stroke_width_container'>
                             <div>
-                                <input class="stroke_width_input" type="text" min='1' max='60' value='35'>
+                                <input class="stroke_width_input" type="text" min='1' max='60' value='1'>
                             </div>
                             <div>
-                                <input class='stroke_width_input_slider' type='range' name='Width' min='1' max='60' value='35' oninput="updateWidthInput(this.value)">
+                                <input class='stroke_width_input_slider' type='range' name='Width' min='1' max='60' value='1'>
                             </div>
                         </div>
                     </span>
                 </div>
-                <div class="nav-item-custom stroke_dash_item mx-auto">
+                <div class="nav-item-custom stroke_dash_item">
+                    <p class="stroke-button">Dash</p>
                     <span class="btn btn-secondary stroke_dash_button">
                         <img id="dash-icon" src="assets/img/dash-512.png">
-                        <!-- <div class='strokeWidth_container'>
-                            <div id='strokeInputBox'>
-                                <input id="strokeWidthInput" type="text" value="" placeholder='35'>
-                            </div>
-                            <div id='strokeWidth'>
-                                <input type='range' name='Width' min='10' max='60' oninput="updateWidthInput(this.value)">
-                            </div>
-                        </div> -->
                     </span>
+                </div>
+                <div class="nav-item-custom stroke_arrow_item">
+                    <p class="stroke-button">Arrow</p>
                     <span class="btn btn-secondary stroke_arrow_button">
                         <img id="arrow-icon" src="assets/img/right_arrow-512.png">
                     </span>
@@ -166,6 +164,10 @@
                     <i class="fas fa-slash"></i>
                 </button>
 
+                <button id="drawing-curve">
+                    <img src="assets/img/curve.png" id="curve-img">
+                </button>
+
                 <button id="pencil">
                     <i class="fas fa-pencil-alt"></i>
                 </button>
@@ -173,6 +175,15 @@
                 <button id="drawing-text">
                     <i class="fas fa-font"></i>
                 </button>
+
+                <button id="drawing-pumpkin">
+                    <img src="assets/img/pumpkin.png" id="pumpkin-img">
+                </button>
+
+                <button id="drawing-bat">
+                    <img src="assets/img/bat.png" id="bat-img">
+                </button>
+
             </nav>
 
             <nav id="sidebar-2">
@@ -185,6 +196,7 @@
                 <button id="redo" disabled>
                     <i class="fas fa-redo"></i>
                 </button>
+                <button><a id="download" download="Painting.png"><span>Download Image</span></a></button>
             </nav>
         </div>
     </section>
@@ -198,12 +210,16 @@
 
     <!--Functions-->
     <script type='text/javascript' src="assets/script/canvas-common.js"></script>
-    <script type='text/javascript' src="assets/script/tool_pencil.js"></script>
     <script type='text/javascript' src="assets/script/tool_rectangle.js"></script>
     <script type='text/javascript' src="assets/script/tool_circle.js"></script>
     <script type='text/javascript' src="assets/script/tool_star.js"></script>
+    <script type='text/javascript' src="assets/script/tool_polygon.js"></script>
     <script type='text/javascript' src="assets/script/tool_straight.js"></script>
+    <script type='text/javascript' src="assets/script/tool_curve.js"></script>
+    <script type='text/javascript' src="assets/script/tool_pencil.js"></script>
     <script type='text/javascript' src="assets/script/tool_text.js"></script>
+    <script type='text/javascript' src="assets/script/tool_pumpkin.js"></script>
+    <script type='text/javascript' src="assets/script/tool_bat.js"></script>
     <script type='text/javascript' src="assets/script/all_tools.js"></script>
     <script type='text/javascript' src="assets/script/undo_redo.js"></script>
     <script type='text/javascript' src="assets/script/color_picker.js"></script>

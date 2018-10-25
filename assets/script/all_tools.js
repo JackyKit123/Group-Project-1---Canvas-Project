@@ -24,6 +24,12 @@
     $('#drawing-text').on('click', () => {
         currentFunction = new DrawingText();
     });
+    $('#drawing-pumpkin').on('click', () => {
+        currentFunction = new DrawingPumpkin();
+    });
+    $('#drawing-bat').on('click', () => {
+        currentFunction = new DrawingBat();
+    });
 
     $('#clear-canvas').on('click', () => {
         if (confirm('Erase All will remove all your work and changes cannot be undone, Sure?')) {
@@ -33,6 +39,9 @@
             }
     });
 
-    function updateWidthInput(val) {
-        document.getElementById('strokeWidthInput').value=val;
-    }
+    $('#download').on('click',function() {
+        const canvas = document.getElementById('canvas-real')
+        $('#download').attr("href",canvas.toDataURL());
+        })
+
+    
