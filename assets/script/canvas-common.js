@@ -10,6 +10,9 @@ $('#canvas-draft')
     .on('mouseenter', e => {
         currentFunction.onMouseEnter([e.offsetX, e.offsetY], e);
     })
+    .on('dblclick', e => {
+        currentFunction.onDoubleClick([e.offsetX, e.offsetY], e);
+    })
 $('html')
     .on('mouseup', e => {
         currentFunction.onMouseUp([e.offsetX, e.offsetY], e);
@@ -21,9 +24,11 @@ $('html')
         if (e.shiftKey) {
         shiftPressing = true
         }
+        currentFunction.onKeyDown([e.offsetX, e.offsetY], e);
     })
     .on('keyup', e => {
         shiftPressing = false
+        currentFunction.onKeyUp([e.offsetX, e.offsetY], e);
     })
 
 let strokeStyle = 'black';
@@ -42,4 +47,7 @@ class PaintFunction {
     onMouseUp() { }
     onMouseLeave() { }
     onMouseEnter() { }
+    onDoubleClick() { }
+    onKeyDown() { }
+    onKeyUp() { }
 }    

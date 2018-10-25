@@ -1,63 +1,49 @@
 class DrawingText extends PaintFunction {
     constructor() {
         super();
-        
+        this.parameter = {
+            layer: true,
+            fillStyle: fillStyle,
+            strokeStyle: strokeStyle,
+            strokeWidth: 2,
+            x: 0, y: 0,
+            fontSize: Math.max(strokeWidth,20),
+            fontFamily: 'Verdana, sans-serif',
+            fromCenter: false,
+            text: '',
+        }
     }
 
     onMouseDown(coord, event) {
-        this.dragging = true;
-        this.mouseBeginX = coord[0];
-        this.mouseBeginY = coord[1];        
-    }
-
-    onMouseMove(coord, event) {
-    }
-
-    onMouseUp(coord, event) {
-        if (this.dragging) {
-            this.mouseEndX = coord[0];
-            this.mouseEndY = coord[1];
-            resetUndo();
-            this.draw(this.mouseBeginX, this.mouseBeginY, this.mouseEndX, this.mouseEndY, '#canvas-real');
-            this.dragging = false;
-            $('#canvas-draft').clearCanvas();
-        }
-    }
-
-    /* onKeyDown(coord, event) {
-        if(event.keydown) {
-            this.draw(this.key, this.mouseBeginX, this.mouseBeginY);
-        }
-        
-        if(event.keycode === 8) {
-            resetUndo();
-        } else if (event.keycode === 13) {
-            this.drawText(this.mouseBeginX, this.mouseBeginY, '#canvas-real');
+        if (!($('#canvasInput')[0])) {
+            let x = coord[0]
+            let y = coord[1]
+            this.parameter.x = x;
+            this.parameter.y = y;
+        $( "#canvas-mainboard" ).append( `<input type=text style="font-size:${Math.max(strokeWidth,20)}px;height:${Math.max(strokeWidth,20)}px;width:${Math.max(strokeWidth,20) * 10}px;top:${y}px; left:${x + 200}px; position:absolute" id="canvasInput">` );
         } else {
-            this.drawText(event.key, this.mouseBeginX, this.mouseBeginY, '#canvas-draft');
+            $('#canvasInput').remove()
+            let x = coord[0]
+            let y = coord[1]
+            this.parameter.x = x;
+            this.parameter.y = y;
+            $( "#canvas-mainboard" ).append( `<input type=text style="font-size:${Math.max(strokeWidth,20)}px;height:${Math.max(strokeWidth,20)}px;width:${Math.max(strokeWidth,20) * 10}px;top:${y}px; left:${x + 200}px; position:absolute" id="canvasInput">` );
         }
-    } */
+    }
 
-    draw(x1, y1, x2, y2, which) {
-        const x = Math.min(x1,x2);
-        const y = Math.min(y1,y2);
-        if (which == '#canvas-draft') {
-            var printLayer = false;
-        } else {
-            var printLayer = true;
+    onKeyDown(coord, event) {
+        if (event.keyCode == 13) {
+            this.parameter.text = $('#canvasInput').val()
+            resetUndo()
+            $('#canvasInput').remove()
+            $('#canvas-real').drawText(this.parameter)
         }
-        $(which).drawText({
-            layer: printLayer,
-            strokeStyle: this.strokeStyle,
-            strokeWidth: this.strokeWidth,
-            fontFamily: "Arial",
-            fontSize: 40,
-            text: "world",
-            x: x, y: y,
-        })
-    }    
-    
+        if (event.keyCode == 27) {
+            $('#canvasInput').remove()
+        }
+    }
 }
 
-
-
+$('#sidebar, #sidebar-2').on('click',e => {
+    $('#canvasInput').remove()
+})

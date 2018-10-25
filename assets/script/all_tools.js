@@ -6,18 +6,21 @@
     $('#drawing-line').on('click', () => {
         currentFunction = new DrawingStraightLine();
     });
+    $('#drawing-curve').on('click', () => {
+        currentFunction = new DrawingCurveLine();
+    });
     $('#pencil').on('click', () => {
         currentFunction = new Pencil();
     });
-
+    $('#drawing-polygon').on('click', () => {
+        currentFunction = new DrawingPolygon();
+    });
     $('#drawing-circle').on('click', () => {
         currentFunction = new DrawingCircle();
     });
-
     $('#drawing-star').on('click', () => {
         currentFunction = new DrawingStar();
     });
-
     $('#drawing-text').on('click', () => {
         currentFunction = new DrawingText();
     });
