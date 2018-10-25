@@ -22,7 +22,7 @@ $(function () {
         e.stopPropagation()
     })
 
-    $('html').on('click', (e) => {
+    $('html,.color_preview').on('click', (e) => {
         $('.stroke_width_container').slideUp("slow");
     })
 
