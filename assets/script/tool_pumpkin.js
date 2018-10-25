@@ -45,7 +45,8 @@ class DrawingPumpkin extends PaintFunction {
         }
         $(which).drawImage({
             layer: printLayer,
-            source: 'assets/img/pumpkin.png',
+            crossOrigin: 'anonymous',
+            source: 'https://i.imgur.com/OPnsoaP.png',
             x: x, y: y,
             height: h,
             width: w,
