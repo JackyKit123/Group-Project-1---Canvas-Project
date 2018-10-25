@@ -33,4 +33,8 @@
             }
     });
 
+    $('#download').on('click',function() {
+        const canvas = document.getElementById('canvas-real')
+        $('#download').attr("href",canvas.toDataURL());
+        })
     
