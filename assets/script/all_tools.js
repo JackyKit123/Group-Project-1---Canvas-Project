@@ -24,6 +24,12 @@
     $('#drawing-text').on('click', () => {
         currentFunction = new DrawingText();
     });
+    $('#drawing-bat').on('click', () => {
+        currentFunction = new DrawingBat();
+    });
+    $('#drawing-pumpkin').on('click', () => {
+        currentFunction = new DrawingPumpkin();
+    });
 
     $('#clear-canvas').on('click', () => {
         if (confirm('Erase All will remove all your work and changes cannot be undone, Sure?')) {
