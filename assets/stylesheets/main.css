@@ -87,7 +87,8 @@ body{
     justify-content: center;
 }
 
-#rect-img {
+#rect-img,
+#curve-img {
     height: 30px;
     width: 40px;
 }
