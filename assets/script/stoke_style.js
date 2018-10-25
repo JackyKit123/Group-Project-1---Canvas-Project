@@ -53,15 +53,9 @@ $(function () {
             stokeDash = [strokeWidth + 10];
         }
         console.log(clickCount);
-        /* if (strokeDashActive == true) {
-            strokeDash = [strokeWidth + 10];
-        } else {
-            strokeDash = 0;
-        }     */
     });
 
     //Set arrow function
-    clickCount = (clickCount == 2) ? 0 : clickCount;
     $('.stroke_arrow_button').click(function () {
         clickCount++;
         if (clickCount % 2 == 0) {
