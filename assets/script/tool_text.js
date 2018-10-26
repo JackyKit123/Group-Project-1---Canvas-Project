@@ -36,6 +36,7 @@ class DrawingText extends PaintFunction {
             this.parameter.text = $('#canvasInput').val()
             resetUndo()
             $('#canvasInput').remove()
+            this.parameter.fontSize = Math.max(strokeWidth, 20)
             $('#canvas-real').drawText(this.parameter)
         }
         if (event.keyCode == 27) {

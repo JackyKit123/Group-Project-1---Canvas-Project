@@ -47,7 +47,7 @@ class DrawingStar extends PaintFunction {
             strokeStyle: strokeStyle,
             strokeWidth: strokeWidth,
             x: x, y: y,
-            radius:  Math.PI * (h),
+            radius:  h,
             rotate: r,
             height: h,
             width: w,
