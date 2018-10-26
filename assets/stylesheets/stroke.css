@@ -16,6 +16,7 @@
 }
 
 .stroke_width_container {
+    display: none;
     position: relative;
     margin-top: 22px;
     margin-left: -60px;
