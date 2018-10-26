@@ -29,7 +29,6 @@ $('html')
         currentFunction.onMouseUp([e.offsetX, e.offsetY], e);
     })
     .on('mousemove touchmove', e => {
-        e.preventDefault();
         e.target.focus({ preventScroll: true });
         (e.type == 'touchmove') ?
             currentFunction.onMouseMove([e.offsetX - 200, e.offsetY - 108], e) :
