@@ -2,6 +2,8 @@ let currentFunction;
 
 $('#canvas-draft')
     .on('touchstart mousedown', e => {
+        e.preventDefault();
+        e.target.focus({preventScroll: true});
         currentFunction.onMouseDown([e.offsetX, e.offsetY], e);
     })
     .on('mouseleave', e => {
