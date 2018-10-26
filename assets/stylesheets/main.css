@@ -28,11 +28,17 @@ body{
 
 /*---Navbar---*/
 .navbar {
+    width: 1600px;
     background: rgba(252, 143, 131);
     position: relative;
     display: flex;
     flex-wrap: nowrap !important;
     z-index: 20;
+}
+@media only screen and (min-width: 1600px) {
+.navbar {
+    width: -webkit-fill-available;
+}
 }
 
 .navbar-brand > p {
@@ -71,6 +77,7 @@ body{
 
 /*---Toolbar---*/
 .wrapper {
+    height: -webkit-fill-available !important;
     background: rgba(113, 233, 255);
     position: relative;
     margin-top: 0;
