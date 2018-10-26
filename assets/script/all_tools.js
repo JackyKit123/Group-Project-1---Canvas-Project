@@ -1,4 +1,5 @@
-    currentFunction = new Pencil();
+$(document).ready(function() {
+  
 
     $('#drawing-rectangle').on('click', () => {
         currentFunction = new DrawingRectangle();
@@ -52,4 +53,5 @@
       $('#sidebar button').not(this).removeClass('active');
     });
 
-    
+    currentFunction = new Pencil();
+})
