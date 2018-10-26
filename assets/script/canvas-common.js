@@ -1,7 +1,7 @@
 let currentFunction;
 
 $('#canvas-draft')
-    .on('mousedown', e => {
+    .on('touchstart mousedown', e => {
         currentFunction.onMouseDown([e.offsetX, e.offsetY], e);
     })
     .on('mouseleave', e => {
@@ -13,11 +13,16 @@ $('#canvas-draft')
     .on('dblclick', e => {
         currentFunction.onDoubleClick([e.offsetX, e.offsetY], e);
     })
+    .on('touchend', e => {
+        currentFunction.onMouseUp([e.offsetX, e.offsetY], e);
+    })
 $('html')
     .on('mouseup', e => {
         currentFunction.onMouseUp([e.offsetX, e.offsetY], e);
     })
-    .on('mousemove', e => {
+    .on('mousemove touchmove', e => {
+        (e.type == 'touchmove') ?
+        currentFunction.onMouseMove([e.offsetX -200, e.offsetY -108], e):
         currentFunction.onMouseMove([e.offsetX, e.offsetY], e);
     })
     .on('keydown', e => {
