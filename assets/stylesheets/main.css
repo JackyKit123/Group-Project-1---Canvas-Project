@@ -9,6 +9,10 @@ body{
     cursor: crosshair;
 }
 
+.btn, button {
+    cursor:pointer;
+}
+
 #canvas-draft, 
 #canvas-real {
     border:1px rgba(0, 0, 0);
@@ -131,6 +135,10 @@ body{
 #sidebar-2 > button:active:not(:disabled) {
     background: rgba(255, 180, 109);
     transform: translateY(3px);
+}
+
+#sidebar-2 > button:disabled {
+    cursor: not-allowed;
 }
 
 button > i {

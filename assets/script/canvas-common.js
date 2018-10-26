@@ -4,15 +4,17 @@ $('#canvas-draft')
     .on('touchstart mousedown', e => {
         e.preventDefault();
         e.target.focus({ preventScroll: true });
-        if (clickTimer == null) {
+        if (clickTimer == null && e.type == 'touchstart') {
             clickTimer = setTimeout(function () {
                 clickTimer = null;
                 currentFunction.onMouseDown([e.offsetX, e.offsetY], e);
             }, 200)
-        } else {
+        } else if (e.type == 'touchstart') {
             clearTimeout(clickTimer);
             clickTimer = null;
             currentFunction.onDoubleClick([e.offsetX, e.offsetY], e);
+        } else {
+            currentFunction.onMouseDown([e.offsetX, e.offsetY], e);
         }
     })
     .on('mouseleave', e => {
@@ -23,6 +25,9 @@ $('#canvas-draft')
     })
     .on('touchend', e => {
         currentFunction.onMouseUp([e.offsetX, e.offsetY], e);
+    })
+    .on('dblclick', e => {
+        currentFunction.onDoubleClick([e.offsetX, e.offsetY], e);
     })
 $('html')
     .on('mouseup', e => {
