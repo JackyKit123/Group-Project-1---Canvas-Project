@@ -18,6 +18,9 @@ $('#canvas-draft')
     .on('touchend', e => {
         currentFunction.onMouseUp([e.offsetX, e.offsetY], e);
     })
+    .doubletap(e => {
+        currentFunction.onDoubleClick([e.offsetX, e.offsetY], e);
+    })
 $('html')
     .on('mouseup', e => {
         currentFunction.onMouseUp([e.offsetX, e.offsetY], e);
