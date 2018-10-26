@@ -1,10 +1,19 @@
 let currentFunction;
-
+let clickTimer = null;
 $('#canvas-draft')
     .on('touchstart mousedown', e => {
         e.preventDefault();
-        e.target.focus({preventScroll: true});
-        currentFunction.onMouseDown([e.offsetX, e.offsetY], e);
+        e.target.focus({ preventScroll: true });
+        if (clickTimer == null) {
+            clickTimer = setTimeout(function () {
+                clickTimer = null;
+                currentFunction.onMouseDown([e.offsetX, e.offsetY], e);
+            }, 200)
+        } else {
+            clearTimeout(clickTimer);
+            clickTimer = null;
+            currentFunction.onDoubleClick([e.offsetX, e.offsetY], e);
+        }
     })
     .on('mouseleave', e => {
         currentFunction.onMouseLeave([e.offsetX, e.offsetY], e);
@@ -12,27 +21,22 @@ $('#canvas-draft')
     .on('mouseenter', e => {
         currentFunction.onMouseEnter([e.offsetX, e.offsetY], e);
     })
-    .on('dblclick', e => {
-        currentFunction.onDoubleClick([e.offsetX, e.offsetY], e);
-    })
     .on('touchend', e => {
         currentFunction.onMouseUp([e.offsetX, e.offsetY], e);
-    })
-    .doubletap(e => {
-        currentFunction.onDoubleClick([e.offsetX, e.offsetY], e);
     })
 $('html')
     .on('mouseup', e => {
         currentFunction.onMouseUp([e.offsetX, e.offsetY], e);
     })
     .on('mousemove touchmove', e => {
+        e.target.focus({ preventScroll: true });
         (e.type == 'touchmove') ?
-        currentFunction.onMouseMove([e.offsetX -200, e.offsetY -108], e):
-        currentFunction.onMouseMove([e.offsetX, e.offsetY], e);
+            currentFunction.onMouseMove([e.offsetX - 200, e.offsetY - 108], e) :
+            currentFunction.onMouseMove([e.offsetX, e.offsetY], e);
     })
     .on('keydown', e => {
         if (e.shiftKey) {
-        shiftPressing = true
+            shiftPressing = true
         }
         currentFunction.onKeyDown([e.offsetX, e.offsetY], e);
     })
