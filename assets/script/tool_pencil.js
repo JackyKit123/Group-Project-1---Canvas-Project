@@ -71,6 +71,7 @@ class Pencil extends PaintFunction {
         }
         this.parameter[`x${this.pencilLength}`] = x
         this.parameter[`y${this.pencilLength}`] = y
+        console.log(this.parameter)
         $(which).drawLine(this.parameter)
     }
 }

@@ -4,227 +4,230 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
+    <!--<![endif]-->
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=0.66">
-    <link rel="stylesheet" href="assets/stylesheets/reset.css">
-    <link rel="stylesheet" href="assets/stylesheets/main.css">
-    <link rel="stylesheet" href="assets/stylesheets/color_picker.css">
-    <link rel="stylesheet" href="assets/stylesheets/stroke.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=0">
+        <link rel="stylesheet" href="assets/stylesheets/reset.css">
+        <link rel="stylesheet" href="assets/stylesheets/main.css">
+        <link rel="stylesheet" href="assets/stylesheets/color_picker.css">
+        <link rel="stylesheet" href="assets/stylesheets/stroke.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Schoolbell" rel="stylesheet">
-</head>
+    </head>
 
-<body>
-    <!--[if lt IE 7]>
+    <body>
+        <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <nav class="navbar navbar-dark">
-        <a class="navbar-brand" href="#">
-            <p> Draw</p>
-        </a>
+        <nav class="navbar navbar-dark">
+            <a class="navbar-brand" href="#">
+                <p> Draw</p>
+            </a>
 
-        <div class="navbar-collapse">
-            <div class="navbar-nav-custom">
-                <div class="nav-item-custom ">
-                    <p class="color-button">Fill</p>
-                    <span class='btn btn-secondary color_picker fill' type='text'>
-                        <div class='color_preview_container fill'>
-                            <div class='color_preview fill'>
-                            </div>
-                            <div class='color_picker_container fill'>
-                                <div class='picker_field fill' style="background-color:red">
-                                    <div class='selector fill'></div>
+            <div class="navbar-collapse">
+                <div class="navbar-nav-custom">
+                    <div class="nav-item-custom ">
+                        <p class="color-button">Fill</p>
+                        <span class='btn btn-secondary color_picker fill' type='text'>
+                            <div class='color_preview_container fill'>
+                                <div class='color_preview fill'>
                                 </div>
-                                <div class='hue_picker_container fill'>
-                                    <div class="hue_slider_container fill"><input type="range" min="0" max="360" value="360"
-                                            class="color-slider hue_picker hue_picker_slider fill"></div>
-                                    <div class="color_number_container fill"><input type="number" min="0" max="360"
-                                            value="360" class="color-number hue_picker hue_picker_number fill"></div>
-                                </div>
-                                <div class='alpha_picker_container fill'>
-                                    <div class="alpha_slider_container fill">
-                                        <div class='grey_gradient fill'>
-                                            <div>
-                                                <input type="range" min="0" max="100" value="0" class="color-slider alpha_picker alpha_picker_slider fill">
+                                <div class='color_picker_container fill'>
+                                    <div class='picker_field fill' style="background-color:red">
+                                        <div class='selector fill'></div>
+                                    </div>
+                                    <div class='hue_picker_container fill'>
+                                        <div class="hue_slider_container fill"><input type="range" min="0" max="360"
+                                                value="360" class="color-slider hue_picker hue_picker_slider fill"></div>
+                                        <div class="color_number_container fill"><input type="number" min="0" max="360"
+                                                value="360" class="color-number hue_picker hue_picker_number fill"></div>
+                                    </div>
+                                    <div class='alpha_picker_container fill'>
+                                        <div class="alpha_slider_container fill">
+                                            <div class='grey_gradient fill'>
+                                                <div>
+                                                    <input type="range" min="0" max="100" value="0" class="color-slider alpha_picker alpha_picker_slider fill">
+                                                </div>
                                             </div>
+                                            <div class='alpha_background fill'></div>
                                         </div>
-                                        <div class='alpha_background fill'></div>
+                                        <div class="color_number_container fill">
+                                            <input type="number" min="0" max="100" value="0" class="color-number alpha_picker alpha_picker_number fill">
+                                        </div>
                                     </div>
-                                    <div class="color_number_container fill">
-                                        <input type="number" min="0" max="100" value="0" class="color-number alpha_picker alpha_picker_number fill">
+                                </div>
+                                <div class='color_picker_container stroke'>
+                                    <div class='picker_field stroke' style="background-color:red">
+                                        <div class='selector stroke'></div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class='color_picker_container stroke'>
-                                <div class='picker_field stroke' style="background-color:red">
-                                    <div class='selector stroke'></div>
-                                </div>
-                                <div class='hue_picker_container stroke'>
-                                    <div class="hue_slider_container stroke"><input type="range" min="0" max="360"
-                                            value="360" class="color-slider hue_picker hue_picker_slider stroke"></div>
-                                    <div class="color_number_container stroke"><input type="number" min="0" max="360"
-                                            value="360" class="color-number hue_picker hue_picker_number stroke"></div>
-                                </div>
-                                <div title="transperancy" class='alpha_picker_container stroke'>
-                                    <div class="alpha_slider_container stroke">
-                                        <div class='grey_gradient stroke'>
-                                            <div>
-                                                <input type="range" min="0" max="100" value="100" class="color-slider alpha_picker alpha_picker_slider stroke">
+                                    <div class='hue_picker_container stroke'>
+                                        <div class="hue_slider_container stroke"><input type="range" min="0" max="360"
+                                                value="360" class="color-slider hue_picker hue_picker_slider stroke"></div>
+                                        <div class="color_number_container stroke"><input type="number" min="0" max="360"
+                                                value="360" class="color-number hue_picker hue_picker_number stroke"></div>
+                                    </div>
+                                    <div title="transperancy" class='alpha_picker_container stroke'>
+                                        <div class="alpha_slider_container stroke">
+                                            <div class='grey_gradient stroke'>
+                                                <div>
+                                                    <input type="range" min="0" max="100" value="100" class="color-slider alpha_picker alpha_picker_slider stroke">
+                                                </div>
                                             </div>
+                                            <div class='alpha_background stroke'></div>
                                         </div>
-                                        <div class='alpha_background stroke'></div>
-                                    </div>
-                                    <div class="color_number_container stroke">
-                                        <input type="number" min="0" max="100" value="100" class="color-number alpha_picker alpha_picker_number stroke">
+                                        <div class="color_number_container stroke">
+                                            <input type="number" min="0" max="100" value="100" class="color-number alpha_picker alpha_picker_number stroke">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </span>
-                </div>
-                <div class="nav-item-custom">
-                    <p class="color-button">Stroke</p>
-                    <span class='btn btn-secondary color_picker stroke' type='text'>
-                        <div class='color_preview_container stroke'>
-                            <div class='color_preview stroke'>
-                            </div>
+                        </span>
+                    </div>
+                    <div class="nav-item-custom">
+                        <p class="color-button">Stroke</p>
+                        <span class='btn btn-secondary color_picker stroke' type='text'>
+                            <div class='color_preview_container stroke'>
+                                <div class='color_preview stroke'>
+                                </div>
 
-                        </div>
-                    </span>
-                </div>
-                <div class="nav-item-custom stroke_width_item">
-                    <p class="stroke-button">Width</p>
-                    <span class="btn btn-secondary stroke_width_button" style ="background: transparent">
-                        <i class="fas fa-text-width"></i>
-                        <div class='stroke_width_container'>
-                            <div>
-                                <input class="stroke_width_input" type="text" min='1' max='60' value='1'>
                             </div>
-                            <div>
-                                <input class='stroke_width_input_slider' type='range' name='Width' min='1' max='60' value='1'>
+                        </span>
+                    </div>
+                    <div class="nav-item-custom stroke_width_item">
+                        <p class="stroke-button">Width</p>
+                        <span class="btn btn-secondary stroke_width_button" style="background: transparent">
+                            <i class="fas fa-text-width"></i>
+                            <div class='stroke_width_container'>
+                                <div>
+                                    <input class="stroke_width_input" type="text" min='1' max='60' value='1'>
+                                </div>
+                                <div>
+                                    <input class='stroke_width_input_slider' type='range' name='Width' min='1' max='60'
+                                        value='1'>
+                                </div>
                             </div>
-                        </div>
-                    </span>
-                </div>
-                <div class="nav-item-custom stroke_dash_item">
-                    <p class="stroke-button">Dash</p>
-                    <span class="btn btn-secondary stroke_dash_button" style ="background: transparent">
-                        <img id="dash-icon" src="assets/img/dash-512.png">
-                    </span>
-                </div>
-                <div class="nav-item-custom stroke_arrow_item">
-                    <p class="stroke-button">Arrow</p>
-                    <span class="btn btn-secondary stroke_arrow_button" style ="background: transparent">
-                        <img id="arrow-icon" src="assets/img/right_arrow-512.png">
-                    </span>
+                        </span>
+                    </div>
+                    <div class="nav-item-custom stroke_dash_item">
+                        <p class="stroke-button">Dash</p>
+                        <span class="btn btn-secondary stroke_dash_button" style="background: transparent">
+                            <img id="dash-icon" src="assets/img/dash-512.png">
+                        </span>
+                    </div>
+                    <div class="nav-item-custom stroke_arrow_item">
+                        <p class="stroke-button">Arrow</p>
+                        <span class="btn btn-secondary stroke_arrow_button" style="background: transparent">
+                            <img id="arrow-icon" src="assets/img/right_arrow-512.png">
+                        </span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <section id="canvas-mainboard">
-        <div id="canvas-draw" class="container-fluid">
-            <canvas width=1400 height=800 class="canvas" id="canvas-real">Your browser does not support
-                Canvas</canvas>
-            <canvas width=1400 height=800 class="canvas" id="canvas-draft">Your browser does not support
-                Canvas</canvas>
-        </div>
-    </section>
+        <section id="canvas-mainboard">
+            <div id="canvas-draw" class="container-fluid">
+                <canvas width=1400 height=800 class="canvas" id="canvas-real">Your browser does not support
+                    Canvas</canvas>
+                <canvas width=1400 height=800 class="canvas" id="canvas-draft">Your browser does not support
+                    Canvas</canvas>
+            </div>
+        </section>
 
-    <!--Choosing tools-->
-    <section id="toolbar">
-        <div class="wrapper">
-            <nav id="sidebar">
-                <button id="drawing-rectangle">
-                    <img src="assets/img/rectangle.png" id="rect-img">
-                </button>
+        <!--Choosing tools-->
+        <section id="toolbar">
+            <div class="wrapper">
+                <nav id="sidebar">
+                    <button id="drawing-rectangle">
+                        <img src="assets/img/rectangle.png" id="rect-img">
+                    </button>
 
-                <button id="drawing-circle">
-                    <i class="far fa-circle"></i>
-                </button>
+                    <button id="drawing-circle">
+                        <i class="far fa-circle"></i>
+                    </button>
 
-                <button id="drawing-star">
-                    <i class="far fa-star"></i>
-                </button>
+                    <button id="drawing-star">
+                        <i class="far fa-star"></i>
+                    </button>
 
-                <button id="drawing-polygon">
-                    <i class="fas fa-draw-polygon"></i>
-                </button>
+                    <button id="drawing-polygon">
+                        <i class="fas fa-draw-polygon"></i>
+                    </button>
 
-                <button id="drawing-line">
-                    <i class="fas fa-slash"></i>
-                </button>
+                    <button id="drawing-line">
+                        <i class="fas fa-slash"></i>
+                    </button>
 
-                <button id="drawing-curve">
-                    <img src="assets/img/curve.png" id="curve-img">
-                </button>
+                    <button id="drawing-curve">
+                        <img src="assets/img/curve.png" id="curve-img">
+                    </button>
 
-                <button id="pencil">
-                    <i class="fas fa-pencil-alt"></i>
-                </button>
+                    <button id="pencil">
+                        <i class="fas fa-pencil-alt"></i>
+                    </button>
 
-                <button id="drawing-text">
-                    <i class="fas fa-font"></i>
-                </button>
+                    <button id="drawing-text">
+                        <i class="fas fa-font"></i>
+                    </button>
 
-                <button id="drawing-pumpkin">
-                    <img src="assets/img/pumpkin.png" id="pumpkin-img">
-                </button>
+                    <button id="drawing-pumpkin">
+                        <img src="assets/img/pumpkin.png" id="pumpkin-img">
+                    </button>
 
-                <button id="drawing-bat">
-                    <img src="assets/img/bat.png" id="bat-img">
-                </button>
+                    <button id="drawing-bat">
+                        <img src="assets/img/bat.png" id="bat-img">
+                    </button>
 
-            </nav>
+                </nav>
 
-            <nav id="sidebar-2">
-                <button id="clear-canvas"><span>Erase All</span></button>
+                <nav id="sidebar-2">
+                    <button id="clear-canvas"><span>Erase All</span></button>
 
-                <button id="undo" disabled>
-                    <i class="fas fa-undo"></i>
-                </button>
+                    <button id="undo" disabled>
+                        <i class="fas fa-undo"></i>
+                    </button>
 
-                <button id="redo" disabled>
-                    <i class="fas fa-redo"></i>
-                </button>
-                <button><a id="download" download="Painting.png"><span>Download Image</span></a></button>
-            </nav>
-        </div>
-    </section>
+                    <button id="redo" disabled>
+                        <i class="fas fa-redo"></i>
+                    </button>
+                    <button><a id="download" download="Painting.png"><span>Download Image</span></a></button>
+                </nav>
+            </div>
+        </section>
 
-    <!--Dependacies-->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/jcanvas.js"></script>
+        <!--Dependacies-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/jcanvas.js"></script>
 
-    <!--Functions-->
-    <script type='text/javascript' src="assets/script/canvas-common.js"></script>
-    <script type='text/javascript' src="assets/script/tool_rectangle.js"></script>
-    <script type='text/javascript' src="assets/script/tool_circle.js"></script>
-    <script type='text/javascript' src="assets/script/tool_star.js"></script>
-    <script type='text/javascript' src="assets/script/tool_polygon.js"></script>
-    <script type='text/javascript' src="assets/script/tool_straight.js"></script>
-    <script type='text/javascript' src="assets/script/tool_curve.js"></script>
-    <script type='text/javascript' src="assets/script/tool_pencil.js"></script>
-    <script type='text/javascript' src="assets/script/tool_text.js"></script>
-    <script type='text/javascript' src="assets/script/tool_pumpkin.js"></script>
-    <script type='text/javascript' src="assets/script/tool_bat.js"></script>
-    <script type='text/javascript' src="assets/script/all_tools.js"></script>
-    <script type='text/javascript' src="assets/script/undo_redo.js"></script>
-    <script type='text/javascript' src="assets/script/color_picker.js"></script>
-    <script type='text/javascript' src="assets/script/stoke_style.js"></script>
+        <!--Functions-->
+        <script type='text/javascript' src="assets/script/canvas-common.js"></script>
 
-</body>
+        <script type='text/javascript' src="assets/script/tool_rectangle.js"></script>
+        <script type='text/javascript' src="assets/script/tool_circle.js"></script>
+        <script type='text/javascript' src="assets/script/tool_star.js"></script>
+        <script type='text/javascript' src="assets/script/tool_polygon.js"></script>
+        <script type='text/javascript' src="assets/script/tool_straight.js"></script>
+        <script type='text/javascript' src="assets/script/tool_curve.js"></script>
+        <script type='text/javascript' src="assets/script/tool_pencil.js"></script>
+        <script type='text/javascript' src="assets/script/tool_text.js"></script>
+        <script type='text/javascript' src="assets/script/tool_pumpkin.js"></script>
+        <script type='text/javascript' src="assets/script/tool_bat.js"></script>
+
+
+        <script type='text/javascript' src="assets/script/undo_redo.js"></script>
+        <script type='text/javascript' src="assets/script/color_picker.js"></script>
+        <script type='text/javascript' src="assets/script/stoke_style.js"></script>
+        <script type='text/javascript' src="assets/script/all_tools.js"></script>
+    </body>
 
 </html>

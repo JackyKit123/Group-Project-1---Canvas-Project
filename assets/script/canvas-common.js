@@ -1,5 +1,6 @@
-let currentFunction;
+
 let clickTimer = null;
+
 $('#canvas-draft')
     .on('touchstart mousedown', e => {
         e.preventDefault();
@@ -57,7 +58,6 @@ let strokeDash = 0;
 let strokeArrow = false;
 let dragging = false;
 let shiftPressing = false;
-
 class PaintFunction {
     constructor() {
     }
@@ -69,4 +69,5 @@ class PaintFunction {
     onDoubleClick() { }
     onKeyDown() { }
     onKeyUp() { }
-}    
+}
+let currentFunction = new PaintFunction;

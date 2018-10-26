@@ -37,6 +37,8 @@ class DrawingText extends PaintFunction {
             resetUndo()
             $('#canvasInput').remove()
             this.parameter.fontSize = Math.max(strokeWidth, 20)
+            this.parameter.fillStyle = fillStyle;
+            this.parameter.strokeStyle = strokeStyle;
             $('#canvas-real').drawText(this.parameter)
         }
         if (event.keyCode == 27) {
